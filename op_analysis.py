@@ -1,12 +1,19 @@
 import pandas as pd
 from openai_models import gpt3_5 as gpt
-
-
-TRAIN_SAMPLE = 30
-EVAL_SAMPLE = 10
-BATCH_SIZE = 1
+from io import StringIO
 
 pd.set_option('display.max_colwidth', 10000)
+
+TRAIN_SAMPLE = 25
+EVAL_SAMPLE = 2
+BATCH_SIZE = 1
+
+FEATURES = ['#words', '#definite articles', '#indefinite articles', '#positive words', '#2nd person pronoun', '#links',
+ '#negative words', '#hedges', '#1st person pronouns','#1st person plural pronoun','#.com links', 'frac. links',
+ 'frac. .com links', '#examples', 'frac. definite articles', '#question marks', '#PDF links', '#.edu links',
+ 'frac. positive words', 'frac. question marks', '#quotations', 'arousal', 'valence', 'word entropy', '#sentences',
+ 'type-token ratio', '#paragraphs', 'Flesch-Kincaid grade levels', '#italics', 'bullet list', '#bolds','numbered words',
+ 'frac. italics']
 
 
 def prompt_example_data():
@@ -31,18 +38,20 @@ def evaluation_data():
     return heldout_op_data.sample(n=EVAL_SAMPLE, random_state=1)
 
 
-def predictions(batch=False):
+def predictions(batch=False, verbose=False):
     examples = prompt_example_data()
     training_prompt = f"Here is a list of opinions: \n\n { examples }"
 
     to_predict = evaluation_data()
-    prediction_prompt = f"predict if each each row of the csv is delta:True or delta:False" +\
-        f"then explain why you came at the predictions\n\n { to_predict[['title', 'delta_label', 'selftext']] } \n\n"
+    prediction_prompt = "classify each row as" + \
+                        "delta:True or delta:False, provide a explanation of 100 characters supported by features" +\
+                        f"of the text such as {''.join(FEATURES)} " +\
+                        f"```{ to_predict[['title', 'delta_label', 'selftext']] }```"
 
-    format_prompt=\
-        "please produce your results in this valid JSON format ```{ row: '(the dataframe index)' delta: '' explanation: '' }``` for every row \n " \
-        "please ensure that what you print is valid json and you remove newlines" +\
-        "make sure that explanation is 100 characters and has no escape literals"
+    format_prompt =\
+        "produce your results in valid csv format with header '\'row\', \'delta\', \'explanation\'' for every row" +\
+        "explanation should talk about the stylistic features, make sure that you include the row index in" +\
+        "the row column of the csv. make sure you produce a valid csv"
 
     if batch:
         num_predicted = 0
@@ -50,12 +59,15 @@ def predictions(batch=False):
         while num_predicted < len(to_predict):
             to_predict = evaluation_data()
             to_process = to_predict[num_predicted: num_predicted + BATCH_SIZE]
-            prediction_prompt = f"predict if each each row of the csv is delta:True or delta:False" + \
-                                f"then explain why you came at the predictions\n\n { to_process[['title', 'delta_label', 'selftext']]} \n\n"
+            prediction_prompt = "classify each row as" + \
+                                "delta:True or delta:False, provide a explanation of 100 characters supported by features" +\
+                                f" of the text such as {''.join(FEATURES)} " +\
+                                f"{''.join(FEATURES)} ``` {to_process[['title', 'delta_label', 'selftext']]} ```"
 
             gpt_response = gpt.response(content="".join([training_prompt, prediction_prompt, format_prompt]))
             if gpt_response:
-                print(gpt_response)
+                if verbose:
+                    print(gpt_response)
                 batched_responses += (gpt_response.choices[0].message.content + "\n")
                 num_predicted += BATCH_SIZE
             else:
@@ -67,11 +79,18 @@ def predictions(batch=False):
         return response.choices[0].message.content
 
 
-def measure_accuracy(predictions, validation_df, verbose=False):
-    prediction_result = pd.json_normalize(predictions)
-    prediction_result["delta"] = prediction_result.delta == 'True'  # hack to force boolean from json
+def fix_csv(csv):
+    return gpt.response(content=f"here is the following csv, please reformat so that it is in valid format {csv}")\
+        .choices[0].message.content
 
-    validation_df["row"] = validation_df.index
+
+def measure_accuracy(gpt_response, validation_df, verbose=False):
+    prediction_result = pd.read_csv(StringIO(gpt_response))
+
+    prediction_result["delta"] = prediction_result["delta"].astype(bool)
+
+    prediction_result["row"] = pd.to_numeric(prediction_result.row, errors='coerce')
+    prediction_result = prediction_result.dropna(subset=["row"])
 
     prediction_result = pd.merge(prediction_result, validation_df[["delta_label", "row"]], on='row')
     prediction_result["correct"] = prediction_result["delta"] == prediction_result["delta_label"]
