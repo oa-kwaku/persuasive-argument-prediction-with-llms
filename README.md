@@ -18,6 +18,8 @@
 
 ### Analysis
 
+I asked the LLM to take the explanations produced by 
+
 #### Prompt
 
 ```
@@ -57,6 +59,17 @@ GPT 3.5 works hard to consider the concepts in the argument rather than the styl
 ```
 "row,delta,explanation\n597,False,\"The text does not provide any evidence for the claim that being gay is solely due to upbringing and socialization rather than biological factors. It seems to be based on personal speculation and anecdotal experience. There are no references or supporting facts provided.\""
 ```
+
+I asked the LLM to take the explanations of each row and summarize what characteristics make the OP malleable
+
+> This collection of posts all demonstrates different viewpoints and perspectives on various topics. However, they all have commonalities in how they express 
+> personal opinions and beliefs without providing evidence or counterarguments. They also tend to use emotional language and may have dismissive tones towards 
+> opposing arguments. Some posts mention specific events or examples to support their viewpoint, while others include personal experiences or anecdotes. 
+> Overall, these posts reflect the subjective nature of personal opinions and the role that emotions can play in shaping them.
+
+> Commonalities among the explanations of why a person's post indicates they are malleable include the use of personal beliefs or opinions, the mention of 
+> supporting evidence or sources, and the inclusion of specific words or phrases that indicate a positive or negative sentiment. Additionally, some explanations > mention the presence of logical arguments or reasoning to support the views expressed in the posts.
+
 ### Further Investigation
 
 TK
