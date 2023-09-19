@@ -1,41 +1,75 @@
-# Experiement Analysis
+# Persuasive argument prediction
 
-## OP Analysis of Malleability
+After Reading Tan et al. I set out to replicate their study on persuasion observed on r/changemyview. 
+
+There were two objectives for this exercise
+
+1. Assess the Malleability of the Original Poster (OP) via GPT 3.5 API's
+2. Analyze Pair arguments made to convince an OP and assess the difference between the argument that convinced the OP versus the argument that did not also via GPT 3.5 API's
+
+For more context, please refer to [https://chenhaot.com/papers/changemyview.html](https://chenhaot.com/papers/changemyview.html)
+
+## 1. OP Analysis of Malleability
 
 ### Task
 
+For this objective, we had a JSON dataset of OP opinions. From this dataset I wanted to see if I could predict which OP's were open to their minds being changed with the help of GPT 3.5 and prompting
+
 ### Approach
 
-#### Naive Approach
+I tried two different strategies to try to predict the malleability of OP's
 
-````
-"If an OP has delta=True, it means that the original poster (OP) had their view changed by the responses and arguments presented by others. In this context, a malleable OP refers to an OP who is open-minded and willing to consider different perspectives and potentially change their initial view based on the arguments and evidence presented. Characteristics that make an OP malleable include:\n\n1. Openness to different viewpoints: The OP is receptive to hearing different perspectives and is willing to engage in a discussion about their beliefs.\n\n2. Willingness to evaluate evidence: The OP is open to examining evidence and considering logical arguments that challenge their initial view. They are not dismissive of opposing viewpoints but rather seek to understand and evaluate the validity of alternative arguments.\n\n3. Adaptability to new information: The OP is willing to incorporate new information and insights into their thinking process. They may realize that their initial view was based on incomplete or flawed information and are open to changing their perspective based on more accurate or comprehensive information.\n\n4. Reflective and analytical thinking: The OP engages in critical thinking and reflects on their own beliefs and assumptions. They are able to consider different angles and perspectives, weighing the strengths and weaknesses of their own arguments and the arguments presented by others.\n\n5. Non-defensive attitude: The OP does not become defensive or dismissive when their beliefs are challenged. They engage in respectful and constructive discussions, valuing the exchange of ideas and insights rather than seeking to defend their position at all costs.\n\nIt is important to note that having a malleable OP does not guarantee a change in view, as the OP may still maintain their original perspective after considering different arguments. However, a malleable OP is more open to the possibility of changing their view based on the convincing arguments and evidence presented by others."
-````
+1. **Unprimed Approach** Rely on the encoded knowledge GPT 3.5 might have about open-mindedness and produce an unrimed prompt
 
-- describe the dataset to LLM
-- feed LLM OP text and delta examples
-- loop through and ask the LLM to predict-then-explain how it arrived at the answer
+2. **Feature Primed Approach** Tan et al. found a battery of statistically significant predictive text features that indicated an OP's malleability. I set out to prime GPT 3.5 with those features to see if I could beat the unprimed approach. Features are found below
+
+```
+FEATURES = ['#words', '#definite articles', '#indefinite articles', '#positive words', '#2nd person pronoun', '#links',
+            '#negative words', '#hedges', '#1st person pronouns', '#1st person plural pronoun', '#.com links',
+            'frac. links',
+            'frac. .com links', '#examples', 'frac. definite articles', '#question marks', '#PDF links', '#.edu links',
+            'frac. positive words', 'frac. question marks', '#quotations', 'arousal', 'valence', 'word entropy',
+            '#sentences',
+            'type-token ratio', '#paragraphs', 'Flesch-Kincaid grade levels', '#italics', 'bullet list', '#bolds',
+            'numbered words',
+            'frac. italics']
+```
+
+#### Unprimed Approach
+
+I prompted GPT 3.5 with the following prompt
+
+```
+I have a set of predictions here \n\n{examples}\n\n I want you to explain what characteristics make an OP malleable, now tell me, out of the following opinions that I have given you, how many of these op's are malleable based on your predictions. append to your explanation the number correct then list the row numbers
+```
+with the variable { examples } I passed in `heldout_op_data` from `'cmv/op_task/heldout_op_data.jsonlist.bz2'` for GPT 3.5 to assess
+
+**Example xxplanations output from GPT 3.5**
+````
+"it means that the original poster (OP) had their view changed by the responses and arguments presented by others. In this context, a malleable OP refers to an OP who is open-minded and willing to consider different perspectives and potentially change their initial view based on the arguments and evidence presented. Characteristics that make an OP malleable include:\n\n1. Openness to different viewpoints: The OP is receptive to hearing different perspectives and is willing to engage in a discussion about their beliefs.\n\n2. Willingness to evaluate evidence: The OP is open to examining evidence and considering logical arguments that challenge their initial view. They are not dismissive of opposing viewpoints but rather seek to understand and evaluate the validity of alternative arguments.\n\n3. Adaptability to new information: The OP is willing to incorporate new information and insights into their thinking process. They may realize that their initial view was based on incomplete or flawed information and are open to changing their perspective based on more accurate or comprehensive information.\n\n4. Reflective and analytical thinking: The OP engages in critical thinking and reflects on their own beliefs and assumptions. They are able to consider different angles and perspectives, weighing the strengths and weaknesses of their own arguments and the arguments presented by others.\n\n5. Non-defensive attitude: The OP does not become defensive or dismissive when their beliefs are challenged. They engage in respectful and constructive discussions, valuing the exchange of ideas and insights rather than seeking to defend their position at all costs.\n\nIt is important to note that having a malleable OP does not guarantee a change in view, as the OP may still maintain their original perspective after considering different arguments. However, a malleable OP is more open to the possibility of changing their view based on the convincing arguments and evidence presented by others."
+````
+#### Feature Primed Approach
+
+I prompted GPT 3.5 with the following prompt
+
+
+>Here is a list of opinions: \n\n {examples} classify each row as delta:True or delta:False, >provide an explanation of 100 characters supported by features of the text such as 
+>{''.join(FEATURES)} ```{to_predict[['title', 'delta_label', 'selftext']]}``` produce your
+>results in valid csv format with header '\'row\', \'delta\', \'explanation\'' for every row >explanation should talk about the stylistic features, make sure that you include the row index in >the row column of the csv. make sure you produce a valid csv"
+
+(sadly GPT 3.5 did not produce a consistent csv, although it was simple enough to engineer it to one in PyCharm)
 
 ### Analysis
 
+From the JSON I extracted the following data
+```
+Index(['title', 'delta_label', 'name', 'selftext'], dtype='object')
+```
 I asked the LLM to take the explanations produced by 
 
 #### Prompt
 
-```
-training_prompt = f"Here is a list of opinions: \n\n { examples }"
 
-    to_predict = evaluation_data()
-    prediction_prompt = "classify each row as" + \
-                        "delta:True or delta:False, provide ab explanation of 100 characters supported by features" +\
-                        f"of the text such as {''.join(FEATURES)} +" \
-                        f"```{ to_predict[['title', 'delta_label', 'selftext']] }```"
-
-    format_prompt =\
-        "produce your results in valid csv format with header '\'row\', \'delta\', \'explanation\'' for every row" +\
-        "explanation should talk about the stylistic features, make sure that you include the row index in" +\
-        "the row column of the csv. make sure you produce a valid csv"
-```
 
 #### Output
 ```
