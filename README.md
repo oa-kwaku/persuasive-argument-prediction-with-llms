@@ -44,15 +44,23 @@ training_prompt = f"Here is a list of opinions: \n\n { examples }"
 ```
 
 ####Accuracy
-```
-In [223]: op_analysis.measure_accuracy(op, val_df, True)
-Index(['row', 'delta', 'explanation'], dtype='object')
-      row  delta  ... delta_label  correct
-0    60.0  False  ...       False    False
-1  1030.0   True  ...       False    False
 
-[2 rows x 5 columns]
-Out[223]: 50.0
+**Unprimed Model Fit**
+```
+In [389]: auc_score_unprimed = roc_auc_score(validation_numeric["delta_label_numeric"], validation_numeric[
+     ...: "unprimed_numeric"])
+
+In [390]: auc_score_unprimed
+Out[390]: 0.48747769667477703
+```
+
+**Feature Primed Model Fit**
+```
+In [391]: auc_score_feature_primed = roc_auc_score(validation_numeric["delta_labe
+     ...: l_numeric"], validation_numeric["feature_primed_numeric"])
+
+In [392]: auc_score_feature_primed
+Out[392]: 0.5280129764801298
 ```
 
 GPT 3.5 works hard to consider the concepts in the argument rather than the stylistic choices event when prompted otherwise 
