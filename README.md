@@ -64,7 +64,7 @@ the variable `{ examples }` in this case are 20 rows from the training set fed i
 
 **Unprimed Model Fit**
 
-I performed an Area Under the Receiver Operating Characteristic (AUROC) analysis and got a result under 0.5. This essentially means the fit of the model was worse than what one expect from a human naively predicting.
+I performed an Area Under the Receiver Operating Characteristic (AUROC) analysis and got a result under 0.5. This essentially means the fit of the model was worse than what one expects from a human naively predicting.
 ```
 In [389]: auc_score_unprimed = roc_auc_score(validation_numeric["delta_label_numeric"], validation_numeric[
      ...: "unprimed_numeric"])
@@ -78,16 +78,14 @@ I then asked the LLM to take the explanations of each row and summarize what cha
 >The most common factors that made this group of OPs less malleable are:\n\n1. Strong opinions without mentioning openness to alternative viewpoints.\n2. Firm beliefs without expressing a desire to hear counter-arguments or be persuaded otherwise.\n3. Lack of mention of being open to changing their views.\n4. Clear stance on an issue, leaving little room for malleability.\n5. Stating a belief without indicating a willingness to question or self-reflect.\n\nThese factors suggest that a lack of openness to considering new information, perspectives, or evidence, as well as a strong emotional attachment to their opinions, contribute to the OPs being less malleable
 
 
-
-What is interesting here is that GPT 3.5 mainly mentioned sentiment or topical features of text, (i.e. evidence, counterarguments, beliefs, opinions, tones, commonalities) rather than logical strategies i.e. (ad hominem, ethos, flattery)  or textual analysis (i.e. alliteration, first-person pronouns, active voice).
-
->"row,delta,explanation\n597,False,\"The text does not provide any evidence for the claim that being gay is solely due to upbringing and socialization rather than biological factors. It seems to be based on personal speculation and anecdotal experience. There are no references or supporting facts provided.\""
+What is interesting here is that GPT 3.5 mainly described the disposition of the OP rather than textual or argumentative features. See the example of a single opinion below.
+>* Malleable: Yes. This opinion has the potential to be changed if the OP is open to considering different perspectives on Snowden's support from the left.
 
 I suspect this might be because of the model's fine-tuning to be conversational.
 
 **Feature Primed Model Fit**
 
-In the feature primed model, we saw modestly better performance. per the AUROC analysis. I would like to take further samples of a similar size and see if we are statistically significant in our finding that the feature primed approach performed better than the unprimed approach. I did find a seemingly high false positive rate of `0.9610` for the unprimed approach versus `0.5428` for the feature primed approach.
+In the feature-primed model, we saw modestly better performance. per the AUROC analysis. I would like to take further samples of a similar size and see if we are statistically significant in our finding that the feature-primed approach performed better than the unprimed approach. I did find a seemingly high false positive rate of `0.9610` for the unprimed approach versus `0.5428` for the feature-primed approach.
 ```
 In [391]: auc_score_feature_primed = roc_auc_score(validation_numeric["delta_labe
      ...: l_numeric"], validation_numeric["feature_primed_numeric"])
@@ -107,18 +105,52 @@ I then asked the LLM to take the explanations of each row and summarize what cha
 > supporting evidence or sources, and the inclusion of specific words or phrases that indicate a positive or negative sentiment. Additionally, some explanations
 >  mention the presence of logical arguments or reasoning to support the views expressed in the posts.
 
+When primed with features the LLM considers argumentative structures and rhetorical devices used in the text. Language like "They also tend to use emotional language and may have dismissive tones towards opposing arguments" is indicative of this bias
+
+>"row,delta,explanation\n597,False,\"The text does not provide any evidence for the claim that being gay is solely due to upbringing and socialization rather than biological factors. It seems to be based on personal speculation and anecdotal experience. There are no references or supporting facts provided.\""
+
+In the above analysis, we see that the LLM was able to the assess that the OP was speculating and relying on anecdotes rather than facts. This is quite interesting considering that `anecdotes` or `# of facts` were not in the original list of features that I provided. By priming the LLM it seems as though I forced the LLM to consider the rhetorical structure of the text rather than the OP's disposition.
 
 ### Further Investigation
 
-TK
+We received better model performance and a more cogent explanation when priming the LLM with features. I would like to test several prompting strategies in which I prime the LLM with different frameworks to consider when performing its analysis of the text. In personal experience, I have found LLMs to perform well with a concrete rubric, so I would try to prompt the LLM to produce a feature matrix -- perhaps even clamping the range of outputs to a binary or likert scale of values. 
 
+I want to go the route of constraining the large language model because its inconsistency of output appears to be the largest source of error. When batching the 500 opinions, I used a batch size of 5. When looking at the output, one can see that in each output the LLM used different "logic" in considering those 5 opinions. 
+
+These outputs are from the same run
+>Row 1301
+Row 925
+Row 1402 To determine the malleability of an opinion, we need to analyze the characteristics provided in the dataset. Unfortunately, the dataset you have provided does not include any specific information regarding the malleability of the opinions. The only information available is the title and selftext of each post.
+Without additional information, it is not possible to determine the malleability of each opinion accurately. Therefore, it is not possible to identify the number of correct predictions and list the row numbers.
+
+>OP 480:
+Openness to change: The OP states they are looking for reasons why Amazon Echo can be more helpful than harmful. They seem open to changing their view.
+Willingness to engage: The OP actively responds to comments and engages in discussions.
+Respectful attitude: The OP maintains a respectful tone throughout the post.
+OP 924:
+Openness to change: The OP expresses being conflicted on their view and seeks input to help them make a decision.
+Willingness to engage: The OP states their hope for someone to offer personal experiences/beliefs.
+Respectful attitude: The OP maintains an open-minded tone in their post.
+OP 1184:
+Openness to change: The OP is willing to give deltas if specific conditions are met.
+Willingness to engage: The OP provides specific questions and criteria for changing their view.
+Respectful attitude: The OP maintains a respectful tone and acknowledges the possibility of being an "aberration."
+OP 1240:
+Openness to change: The OP does not explicitly express openness to changing their view.
+Willingness to engage: The OP does not actively engage in discussions or respond to comments.
+Respectful attitude: The OP does not exhibit disrespect, but lack of active engagement limits their malleability.
+OP 1500:
+Openness to change: The OP presents their viewpoint and seeks to understand how opposing perspectives fit within the framework of descriptivism.
+Willingness to engage: The OP actively asks for someone to convince them and is seeking explanations.
+Respectful attitude: The OP maintains a respectful tone in their post.
+Based on the analysis, it appears that 4 out of the 5 provided OPs exhibit the characteristics of malleable OPs. The row numbers of the malleable OPs are 480, 924, 1184, and 1500.
 
 ## Pair Analysis of Effective Argument Features
 
 ### Task
 
 - use large language models to predict which of two similar counterarguments will succeed in changing the same view
-- study found that style features and interplay features have predictive power
+- the study found that style features and interplay features have predictive power
 - The feature with the most predictive power of successful persuasion is the dissimilarity with the original post in word usage
 
 ### Approach
