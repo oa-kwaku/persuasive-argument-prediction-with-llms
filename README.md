@@ -2,9 +2,10 @@
 
 After Reading Tan et al. I set out to replicate their study on persuasion observed on r/changemyview. 
 
-There were two objectives for this exercise
+There were two objectives for this exercise:
 
 1. Assess the Malleability of the Original Poster (OP) via GPT 3.5 API's
+   
 2. Analyze Pair arguments made to convince an OP and assess the difference between the argument that convinced the OP versus the argument that did not also via GPT 3.5 API's
 
 For more context, please refer to [https://chenhaot.com/papers/changemyview.html](https://chenhaot.com/papers/changemyview.html)
@@ -13,11 +14,11 @@ For more context, please refer to [https://chenhaot.com/papers/changemyview.html
 
 ### Task
 
-For this objective, we had a JSON dataset of OP opinions. From this dataset I wanted to see if I could predict which OP's were open to their minds being changed with the help of GPT 3.5 and prompting
+For this objective, I had a JSON dataset of OP opinions. From this dataset I wanted to see if I could predict which OP's had "malleable" minds with the help of GPT 3.5 and prompting
 
 ### Approach
 
-I tried two different strategies to try to predict the malleability of OP's
+I tried two different strategies to try to predict the malleability of OP's:
 
 1. **Unprimed Approach** Rely on the encoded knowledge GPT 3.5 might have about open-mindedness and produce an unrimed prompt
 
@@ -39,9 +40,7 @@ FEATURES = ['#words', '#definite articles', '#indefinite articles', '#positive w
 
 I prompted GPT 3.5 with the following prompt
 
->I have a set of predictions here \n\n{examples}\n\n I want you to explain what characteristics make an OP malleable, now tell me, out of the following opinions that I have given you, how many of these op's are malleable based on your predictions. append to your explanation the number correct then list the row numbers
-
-with the variable { examples } I passed in `heldout_op_data` from `'cmv/op_task/heldout_op_data.jsonlist.bz2'` for GPT 3.5 to assess
+>I have a set of predictions here \n\n{examples}\n\n I want you to explain what characteristics make an OP malleable, now tell me, out of the following opinions that I have given you, how many of these op's are malleable based on your predictions. append to your explanation the number correct then list the row numbers with the variable { examples } I passed in `heldout_op_data` from `'cmv/op_task/heldout_op_data.jsonlist.bz2'` for GPT 3.5 to assess
 
 **Example explanation output from GPT 3.5**
 
@@ -51,11 +50,11 @@ with the variable { examples } I passed in `heldout_op_data` from `'cmv/op_task/
 
 I prompted GPT 3.5 with the following prompt
 
-
->Here is a list of opinions: \n\n {examples} classify each row as delta:True or delta:False, >provide an explanation of 100 characters supported by features of the text such as 
+>Here is a list of opinions: \n\n {examples} classify each row as delta:True or delta:False, provide an explanation of 100 characters supported by features of the text such as 
 >{''.join(FEATURES)} ```{to_predict[['title', 'delta_label', 'selftext']]}``` produce your
 >results in valid csv format with header '\'row\', \'delta\', \'explanation\'' for every row >explanation should talk about the stylistic features, make sure that you include the row index in >the row column of the csv. make sure you produce a valid csv"
 
+the variable `{ examples }` in this case are 20 rows from the training set fed into the prompt in text format.
 (sadly GPT 3.5 did not produce a consistent csv, although it was simple enough to engineer it to one in PyCharm)
 
 **Sample Explanation**
@@ -63,9 +62,9 @@ I prompted GPT 3.5 with the following prompt
 
 ### Analysis
 
-I performed an Area Under the Return of Characteristic (AUROC) analysis and got a result under 0.5. This essentially means the fit of the model was worse than what one expect from a human naively predicting.
-
 **Unprimed Model Fit**
+
+I performed an Area Under the Receiver Operating Characteristic (AUROC) analysis and got a result under 0.5. This essentially means the fit of the model was worse than what one expect from a human naively predicting.
 ```
 In [389]: auc_score_unprimed = roc_auc_score(validation_numeric["delta_label_numeric"], validation_numeric[
      ...: "unprimed_numeric"])
@@ -92,6 +91,8 @@ What is interesting here is that GPT 3.5 mainly mentioned sentiment or topical f
 I suspect this might be because of the model's fine-tuning to be conversational.
 
 **Feature Primed Model Fit**
+
+In the feature primed model, we saw modestly better performance. per the AUROC analysis. I would like to take further samples of a similar size and see if we are statistically significant in our finding that the feature primed approach performed better than the unprimed approach. I did find a seemingly high false positive rate of `0.9610` for the unprimed approach versus `0.5428` for the feature primed approach.
 ```
 In [391]: auc_score_feature_primed = roc_auc_score(validation_numeric["delta_labe
      ...: l_numeric"], validation_numeric["feature_primed_numeric"])
@@ -99,6 +100,10 @@ In [391]: auc_score_feature_primed = roc_auc_score(validation_numeric["delta_lab
 In [392]: auc_score_feature_primed
 Out[392]: 0.5280129764801298
 ```
+
+I tried to get a 
+
+
 
 ### Further Investigation
 
@@ -145,3 +150,41 @@ Note: Sample Size was 2
 ### Further Investigation
 
 Get an idea of proportion, what percentage of results employed each of the following strategies?
+
+
+
+```
+Positive sentiment first person pronoun (#views#) links (#people#) positive words (#support#)
+     ...: Positive sentiment negative words (#unconstitutiona#)
+     ...: Negative sentiment indefinite article (#not#) negative words (#bad##hate#)
+     ...: Positive sentiment positive words (#best#)
+     ...: Positive sentiment positive words (#better#) negative words (#leaving#) positive and negative examples (#better# #well paying##stable#)
+     ...: explanation
+     ...: The text includes negative words and hedges, suggesting a change in view.
+     ...: The text includes negative words and hedges, suggesting no change in view.
+     ...: The text includes negative words, suggesting a change in view.
+     ...: The text includes negative words, hedges, and a quotation, suggesting a change in view.
+     ...: The text includes negative words and hedges, suggesting a change in view.
+     ...: The text includes positive words and a URL, suggesting no change in view.
+     ...: The text includes positive words and a URL, suggesting a change in view.
+     ...: The text does not include any keywords, suggesting no change in view.
+     ...: The text does not include any keywords, suggesting no change in view.
+     ...: The text does not include any keywords, suggesting no change in view.
+     ...: explanation
+     ...: This post expresses racist views towards Gypsies, using negative words and stereotypes.
+     ...: This post argues against the idea of equal value for all humans, using subjective measures.
+     ...: This post discusses the idea of restricting immigration based on ethnic history, without expressing explicit racism.
+     ...: This post argues that philosophy is not distinct from the scientific method, using reasoning and examples.
+     ...: This post discusses the ethics of killing Hitler using a time machine, considering potential consequences.
+     ...: explanation
+     ...: Progressive minimum wage system is proposed, similar to progressive tax system.
+     ...: Becoming an online entertainer is seen as a risky career due to uncertainties of success.
+     ...: There are competing opinions on whether transgender people should be allowed to choose restrooms.
+     ...: The word \'bulbous\' is argued to be grosser than the word \'moist\' because it has no positive connotations and requires a more complicated mouth shape to say.
+     ...: explanation
+     ...: The text includes the words \'I believe\' indicating a personal opinion.
+     ...: The text includes negative words like \'annoying\', \'stupid\', and \'assholes\', indicating a negative viewpoint.
+     ...: The text includes negative words like \'inconsiderate\', \'unthinkable\', and \'asshole\', indicating a negative viewpoint.
+     ...: The text includes negative words like \'annoying\', \'wake\', and \'fucking\', indicating a negative viewpoint.
+     ...: The text includes negative words like \'problems\', \'violence\', and \'fighting\', indicating a negative viewpoint.
+```
