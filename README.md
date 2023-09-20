@@ -145,28 +145,39 @@ Willingness to engage: The OP actively asks for someone to convince them and is 
 Respectful attitude: The OP maintains a respectful tone in their post.
 Based on the analysis, it appears that 4 out of the 5 provided OPs exhibit the characteristics of malleable OPs. The row numbers of the malleable OPs are 480, 924, 1184, and 1500.
 
+With the same prompt GPT 3.5, in the same was unable to successfully predict but was then in a different batch, GPT 3.5 was able to successfully find malleable rows. Thus in further investigation, it is paramount that I cut down on the variability of the output. 
+
 ## Pair Analysis of Effective Argument Features
 
 ### Task
 
-- use large language models to predict which of two similar counterarguments will succeed in changing the same view
-- the study found that style features and interplay features have predictive power
+I set out to use LLMs to predict which of two similar counterarguments will succeed in changing the same view.
+Tan et al. found that style features and interplay features have predictive power. 
+
 - The feature with the most predictive power of successful persuasion is the dissimilarity with the original post in word usage
+
+
+### Naive Approach
+
+"To summarize the common ways to successfully change someone's mind:\n\n1. Present logical and rational arguments.\n2. Appeal to emotions.\n3. Provide alternative perspectives.\n4. Engage in respectful dialogue.\n5. Use storytelling and personal anecdotes.\n6. Focus on common ground.\n7. Provide evidence and examples.\n8. Be patient and persistent."
 
 ### Approach
 
+I prompted GPT 3.5 with the following in order to perform the task
+
+> summarize the difference in the positive and negative arguments by talking about the contrast in the following features {','.join(FEATURES)} only talk about the top 3 features that were significantly present in the positive argument but not the negative and limit the output to 100 words
+
 #### Prompt
 ```
-training_prompt = f"Here is an opinion with an argument that convinced an OP and an argument that did not" + \
-                              f" convince the OP. OP will give a ∆ to the winning argument" + \
-                              f" so don't factor that in `{evaluation_data()[num_predicted: num_predicted + BATCH_SIZE]}`"
+"Here is an opinion with an argument that convinced an OP and an argument that did not convince the OP. OP will give a ∆ to the winning argument so don't factor that in `{evaluation_data()[num_predicted: num_predicted + BATCH_SIZE]}`"
 
-task = f" summarize the difference in the positive and negative arguments by talking about the" +\
-           f" contrast in the following features {','.join(FEATURES)} only talk about the top 3 features that" +\
-           f"were significantly present in the positive argument but not the negative and limit the output to 100 words"
+summarize the difference in the positive and negative arguments by talking about the contrast in the following features {','.join(FEATURES)} only talk about the top 3 features that were significantly present in the positive argument but not the negative and limit the output to 100 words"
 ```
 
 ### Analysis
+
+#### Feature
+"In summary, the positive argument was more convincing and persuasive compared to the negative argument due to several key features:\n\n1. Use of positive words: The positive argument used language that conveyed an optimistic and supportive tone, which likely influenced the reader's perception of the argument.\n\n2. Inclusion of links: The positive argument provided additional evidence and supporting information through the use of links, which enhanced the credibility and persuasiveness of the argument.\n\n3. Use of examples: The positive argument included specific examples to illustrate and strengthen its points, which made the argument more relatable and persuasive.\n\nOverall, the positive argument utilized language, evidence, and examples to create a compelling and persuasive case. In contrast, the negative argument lacked these persuasive elements, making"
 
 ```
 The most common text features mentioned as differentiators between positive and negative arguments are:
@@ -180,7 +191,6 @@ The most common text features mentioned as differentiators between positive and 
 - Use of question marks
 - Inclusion of examples
 ```
-Note: Sample Size was 2
 
 ### Further Investigation
 
