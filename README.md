@@ -75,14 +75,9 @@ Out[390]: 0.48747769667477703
 
 I then asked the LLM to take the explanations of each row and summarize what characteristics make the OP malleable
 
-> This collection of posts all demonstrates different viewpoints and perspectives on various topics. However, they all have commonalities in how they express 
-> personal opinions and beliefs without providing evidence or counterarguments. They also tend to use emotional language and may have dismissive tones towards 
-> opposing arguments. Some posts mention specific events or examples to support their viewpoint, while others include personal experiences or anecdotes. 
-> Overall, these posts reflect the subjective nature of personal opinions and the role that emotions can play in shaping them.
+>The most common factors that made this group of OPs less malleable are:\n\n1. Strong opinions without mentioning openness to alternative viewpoints.\n2. Firm beliefs without expressing a desire to hear counter-arguments or be persuaded otherwise.\n3. Lack of mention of being open to changing their views.\n4. Clear stance on an issue, leaving little room for malleability.\n5. Stating a belief without indicating a willingness to question or self-reflect.\n\nThese factors suggest that a lack of openness to considering new information, perspectives, or evidence, as well as a strong emotional attachment to their opinions, contribute to the OPs being less malleable
 
-> Commonalities among the explanations of why a person's post indicates they are malleable include the use of personal beliefs or opinions, the mention of 
-> supporting evidence or sources, and the inclusion of specific words or phrases that indicate a positive or negative sentiment. Additionally, some explanations
->  mention the presence of logical arguments or reasoning to support the views expressed in the posts.
+
 
 What is interesting here is that GPT 3.5 mainly mentioned sentiment or topical features of text, (i.e. evidence, counterarguments, beliefs, opinions, tones, commonalities) rather than logical strategies i.e. (ad hominem, ethos, flattery)  or textual analysis (i.e. alliteration, first-person pronouns, active voice).
 
@@ -101,8 +96,16 @@ In [392]: auc_score_feature_primed
 Out[392]: 0.5280129764801298
 ```
 
-I tried to get a 
+I then asked the LLM to take the explanations of each row and summarize what characteristics make the OP malleable
 
+> This collection of posts all demonstrates different viewpoints and perspectives on various topics. However, they all have commonalities in how they express 
+> personal opinions and beliefs without providing evidence or counterarguments. They also tend to use emotional language and may have dismissive tones towards 
+> opposing arguments. Some posts mention specific events or examples to support their viewpoint, while others include personal experiences or anecdotes. 
+> Overall, these posts reflect the subjective nature of personal opinions and the role that emotions can play in shaping them.
+
+> Commonalities among the explanations of why a person's post indicates they are malleable include the use of personal beliefs or opinions, the mention of 
+> supporting evidence or sources, and the inclusion of specific words or phrases that indicate a positive or negative sentiment. Additionally, some explanations
+>  mention the presence of logical arguments or reasoning to support the views expressed in the posts.
 
 
 ### Further Investigation
