@@ -42,6 +42,7 @@ def evaluation_data():
 
 
 def unprimed_prediction(batch=False, verbose=False):
+    ''' unprimed GPT analysis '''
     examples = evaluation_data()
     unprimed_prompt = f"have a set of prompts here \n\n{examples}\n\n an op is malleable if delta=True, " + \
                       f"I want you to explain what characteristics make an op malleable"
@@ -73,6 +74,8 @@ def unprimed_prediction(batch=False, verbose=False):
 
 
 def feature_primed_prediction(batch=False, verbose=False):
+    ''' feature primed GPT analysis '''
+
     examples = prompt_example_data()
     training_prompt = f"Here is a list of opinions: \n\n {examples}"
 
@@ -113,12 +116,9 @@ def feature_primed_prediction(batch=False, verbose=False):
         return response.choices[0].message.content
 
 
-def fix_csv(csv):
-    return gpt.response(content=f"here is the following csv, please reformat so that it is in valid format {csv}") \
-        .choices[0].message.content
-
-
 def measure_accuracy(gpt_response, validation_df, verbose=False):
+    ''' AUROC analysis '''
+
     prediction_result = pd.read_csv(StringIO(gpt_response))
 
     prediction_result["delta"] = prediction_result["delta"].astype(bool)

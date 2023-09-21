@@ -16,7 +16,7 @@ FEATURES = ['#words', '#definite articles', '#indefinite articles', '#positive w
 
 def evaluation_data():
     """
-    :return:
+    :return: str, the prompt containing example data for the model
     """
     heldout_pair_data = pd.read_json('cmv/pair_task/heldout_pair_data.jsonlist.bz2', compression='bz2', lines=True)
 
@@ -55,7 +55,8 @@ def unprimed_prediction(batch=False, verbose=False):
         return response.choices[0].message.content
 
 
-def predictions(batch=False, verbose=False):
+def feature_primed_predictions(batch=False, verbose=False):
+    '''GPT analysis'''
     to_predict = evaluation_data()
 
     task = f" summarize the difference in the positive and negative arguments by talking about the" +\
