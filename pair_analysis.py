@@ -3,8 +3,8 @@ from openai_models import gpt3_5 as gpt
 
 pd.set_option('display.max_colwidth', 10000)
 
-EVAL_SAMPLE = 10
-BATCH_SIZE = 2
+EVAL_SAMPLE = 500
+BATCH_SIZE = 5
 
 FEATURES = ['#words', '#definite articles', '#indefinite articles', '#positive words', '#2nd person pronoun', '#links',
  '#negative words', '#hedges', '#1st person pronouns','#1st person plural pronoun','#.com links', 'frac. links',
@@ -26,6 +26,35 @@ def evaluation_data():
     return heldout_pair_data.sample(n=EVAL_SAMPLE, random_state=1)
 
 
+def unprimed_prediction(batch=False, verbose=False):
+    to_predict = evaluation_data()
+    task = f" summarize the difference in the positive and negative arguments by talking about the contrast in argument," +\
+    "limit the output to 100 words \n\n"
+
+    if batch:
+        num_predicted = 0
+        batched_responses = ""
+
+        while num_predicted < len(to_predict):
+            training_prompt = str(evaluation_data()[num_predicted: num_predicted + BATCH_SIZE])
+
+            gpt_response = gpt.response(content="".join([task, training_prompt]))
+            if gpt_response:
+                if verbose:
+                    print(gpt_response)
+
+                batched_responses += (gpt_response.choices[0].message.content + ",")
+                num_predicted += BATCH_SIZE
+
+            else:
+                continue
+
+        return batched_responses
+    else:
+        response = gpt.response(content="".join([str(evaluation_data()), task]))
+        return response.choices[0].message.content
+
+
 def predictions(batch=False, verbose=False):
     to_predict = evaluation_data()
 
@@ -38,9 +67,7 @@ def predictions(batch=False, verbose=False):
         batched_responses = ""
 
         while num_predicted < len(to_predict):
-            training_prompt = f"Here is an opinion with an argument that convinced an OP and an argument that did not" + \
-                              f" convince the OP. OP will give a ∆ to the winning argument" + \
-                              f" so don't factor that in `{evaluation_data()[num_predicted: num_predicted + BATCH_SIZE]}`"
+            training_prompt = evaluation_data()[num_predicted: num_predicted + BATCH_SIZE]
 
             gpt_response = gpt.response(content="".join([training_prompt, task]))
             if gpt_response:

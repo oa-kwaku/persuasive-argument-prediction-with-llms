@@ -1,23 +1,26 @@
 import pandas as pd
 from openai_models import gpt3_5 as gpt
 from io import StringIO
+from sklearn.metrics import roc_auc_score
 
 pd.set_option('display.max_colwidth', 10000)
 
-TRAIN_SAMPLE = 25
-EVAL_SAMPLE = 2
-BATCH_SIZE = 1
+TRAIN_SAMPLE = 20
+EVAL_SAMPLE = 500
+BATCH_SIZE = 5
 
 FEATURES = ['#words', '#definite articles', '#indefinite articles', '#positive words', '#2nd person pronoun', '#links',
- '#negative words', '#hedges', '#1st person pronouns','#1st person plural pronoun','#.com links', 'frac. links',
- 'frac. .com links', '#examples', 'frac. definite articles', '#question marks', '#PDF links', '#.edu links',
- 'frac. positive words', 'frac. question marks', '#quotations', 'arousal', 'valence', 'word entropy', '#sentences',
- 'type-token ratio', '#paragraphs', 'Flesch-Kincaid grade levels', '#italics', 'bullet list', '#bolds','numbered words',
- 'frac. italics']
+            '#negative words', '#hedges', '#1st person pronouns', '#1st person plural pronoun', '#.com links',
+            'frac. links',
+            'frac. .com links', '#examples', 'frac. definite articles', '#question marks', '#PDF links', '#.edu links',
+            'frac. positive words', 'frac. question marks', '#quotations', 'arousal', 'valence', 'word entropy',
+            '#sentences',
+            'type-token ratio', '#paragraphs', 'Flesch-Kincaid grade levels', '#italics', 'bullet list', '#bolds',
+            'numbered words',
+            'frac. italics']
 
 
 def prompt_example_data():
-
     """
     :return: str, the prompt containing example data for the model
     """
@@ -25,8 +28,8 @@ def prompt_example_data():
 
     sample_op_data = train_op_data.sample(n=TRAIN_SAMPLE, random_state=1)
 
-    return sample_op_data[["delta_label", "title", "selftext"]]\
-        .apply(lambda x: f"'{x.title}: {x.selftext}' is defined as delta={x.delta_label}", axis=1)\
+    return sample_op_data[["delta_label", "title", "selftext"]] \
+        .apply(lambda x: f"'{x.title}: {x.selftext}' is defined as delta={x.delta_label}", axis=1) \
         .to_string(index=False, header=False)
 
 
@@ -38,19 +41,50 @@ def evaluation_data():
     return heldout_op_data.sample(n=EVAL_SAMPLE, random_state=1)
 
 
-def predictions(batch=False, verbose=False):
+def unprimed_prediction(batch=False, verbose=False):
+    examples = evaluation_data()
+    unprimed_prompt = f"have a set of prompts here \n\n{examples}\n\n an op is malleable if delta=True, " + \
+                      f"I want you to explain what characteristics make an op malleable"
+
+    validation_prompt = f"now tell me, out of the following opinions that I have given you, " + \
+                        f"how many of these op's are malleable based on your predictions. append" + \
+                        f" to your explanation the number correct then list the row numbers"
+
+    if batch:
+        num_predicted = 0
+        batched_responses = ""
+        while num_predicted < len(examples):
+            to_process = examples[num_predicted: num_predicted + BATCH_SIZE]
+            unprimed_prompt = f"have a set of prompts here \n\n{to_process}\n\n an op is malleable if delta=True, " + \
+                              f"I want you to explain what characteristics make an op malleable"
+
+            gpt_response = gpt.response(content="".join([unprimed_prompt, validation_prompt]))
+            if gpt_response:
+                if verbose:
+                    print(gpt_response)
+                batched_responses += (gpt_response.choices[0].message.content + "\n")
+                num_predicted += BATCH_SIZE
+            else:
+                continue
+
+        return batched_responses
+    else:
+        return gpt.response(content="".join([unprimed_prompt, validation_prompt])).choices[0].message.content
+
+
+def feature_primed_prediction(batch=False, verbose=False):
     examples = prompt_example_data()
-    training_prompt = f"Here is a list of opinions: \n\n { examples }"
+    training_prompt = f"Here is a list of opinions: \n\n {examples}"
 
     to_predict = evaluation_data()
     prediction_prompt = "classify each row as" + \
-                        "delta:True or delta:False, provide a explanation of 100 characters supported by features" +\
-                        f"of the text such as {''.join(FEATURES)} " +\
-                        f"```{ to_predict[['title', 'delta_label', 'selftext']] }```"
+                        "delta:True or delta:False, provide an explanation of 100 characters supported by features" + \
+                        f"of the text such as {''.join(FEATURES)} " + \
+                        f"```{to_predict[['title', 'delta_label', 'selftext']]}```"
 
-    format_prompt =\
-        "produce your results in valid csv format with header '\'row\', \'delta\', \'explanation\'' for every row" +\
-        "explanation should talk about the stylistic features, make sure that you include the row index in" +\
+    format_prompt = \
+        "produce your results in valid csv format with header '\'row\', \'delta\', \'explanation\'' for every row" + \
+        "explanation should talk about the stylistic features, make sure that you include the row index in" + \
         "the row column of the csv. make sure you produce a valid csv"
 
     if batch:
@@ -60,8 +94,8 @@ def predictions(batch=False, verbose=False):
             to_predict = evaluation_data()
             to_process = to_predict[num_predicted: num_predicted + BATCH_SIZE]
             prediction_prompt = "classify each row as" + \
-                                "delta:True or delta:False, provide a explanation of 100 characters supported by features" +\
-                                f" of the text such as {''.join(FEATURES)} " +\
+                                "delta:True or delta:False, provide a explanation of 100 characters supported by features" + \
+                                f" of the text such as {''.join(FEATURES)} " + \
                                 f"{''.join(FEATURES)} ``` {to_process[['title', 'delta_label', 'selftext']]} ```"
 
             gpt_response = gpt.response(content="".join([training_prompt, prediction_prompt, format_prompt]))
@@ -80,7 +114,7 @@ def predictions(batch=False, verbose=False):
 
 
 def fix_csv(csv):
-    return gpt.response(content=f"here is the following csv, please reformat so that it is in valid format {csv}")\
+    return gpt.response(content=f"here is the following csv, please reformat so that it is in valid format {csv}") \
         .choices[0].message.content
 
 
@@ -98,4 +132,8 @@ def measure_accuracy(gpt_response, validation_df, verbose=False):
     if verbose:
         print(prediction_result)
 
-    return len(prediction_result[prediction_result["correct"] == True]) / len(prediction_result)
+    try:
+        return roc_auc_score(prediction_result["delta"], prediction_result["delta_label"])
+
+    except ValueError:
+        pass

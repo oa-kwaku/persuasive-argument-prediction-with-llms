@@ -1,0 +1,631 @@
+row,delta,explanation
+60,TRUE,Contains personal perspective and emotional language.
+1030,TRUE,Personal perspective and dismissive tone towards opposing argument.
+264,TRUE,Expresses personal opinion without providing evidence or counterarguments.
+597,TRUE,Expresses personal opinion without providing evidence or counterarguments.
+1266,TRUE,Expresses personal opinion without providing evidence or counterarguments.
+row,delta,explanation
+996,FALSE,"The text uses words such as ""you"", ""yourself"", indicating a second person perspective."
+810,TRUE,"The text includes words such as ""discrimination"" and ""victims"", indicating a negative sentiment."
+1113,FALSE,"The text mentions ""far-right groups"" and ""objection to a mosque being built"", indicating a controversial topic."
+1004,FALSE,"The text includes words such as ""victimless crimes"", indicating a neutral perspective."
+607,TRUE,"The text mentions the Chattanooga shooting as a military target, indicating a specific event."
+row,delta,explanation
+1488,TRUE,The text discusses the inevitability of nuclear war due to the slow pace of disarmament and the existence of thousands of active nuclear weapons. It argues that even a small-scale nuclear war would have devastating consequences and that the current system of mutually assured destruction is dangerously unstable. The text raises concerns about the lack of visceral reaction from people towards the threat of nuclear war.
+1197,TRUE,"The text expresses frustration with digital media publishers, particularly in the gaming industry, for not providing consumer-friendly options. The author feels that even when they purchase games legally, they are inconvenienced by having to use physical media, while people using bootleg copies do not face the same limitations. The author believes this is unfair and has led them to no longer support digital media publishers."
+1149,FALSE,The author argues that all struggles in the modern capitalist world are ultimately class struggles. They believe that inequality is pervasive and that issues such as racism and sexism are rooted in the wealth and power dynamics of the capitalist system. The author suggests that focusing solely on race and gender ignores the underlying socioeconomic factors at play. Personal experiences with wealth disparities and elitism support their view.
+1297,TRUE,The text argues that parents who put their child up for adoption or leave their child at a fire station should be required to pay child support until the child is adopted. The author believes that these parents should be financially responsible for their child until alternative arrangements are made. They view this as a matter of prioritizing the rights and support of the child.
+208,FALSE,"The author contends that raising one\'s voice during an argument is justified as it is a normal reaction to feeling angry or upset. They believe that calling someone out for raising their voice is unnecessary and that it is unreasonable to expect people to remain calm and composed when they are angry. The author acknowledges that raising one\'s voice may not be appropriate in certain settings, such as public places."
+row,delta,explanation
+102,TRUE,"negative words#, indefinite articles, question marks, explicit mention of \'murder\'"
+852,TRUE,"negative words#, question marks, explicit mention of \'ban\'"
+1476,TRUE,"positive words, links, quotations, explicit mention of \'anti-science\'"
+462,TRUE,"positive words, positive mention of \'money\', explicit mention of \'merchandise sales\'"
+row,delta,explanation
+0,TRUE,"The use of phrases like \'America desperately needs,\' \'immediate minimum wage increase,\' and \'akin to slave labor\' indicate a strong belief and sense of urgency."
+1,FALSE,"The use of phrases like \'is not conducive to real word results,\' \'pointless,\' and \'solipsistic bubble of nothingness\' indicate a negative perspective."
+2,TRUE,"The use of phrases like \'increase in accountability,\' \'reduce police officers use of force,\' and \'excellent evidence\' indicate support for police body cameras and their benefits."
+3,FALSE,"The use of phrases like \'we are not better than the criminals,\' \'waste enormous amounts of resources,\' and \'save lives\' indicate a negative perspective on society\'s allocation of resources."
+4,TRUE,"The use of phrases like \'external validation matters a lot,\' \'convincing myself otherwise,\' and \'social acceptance\' indicate a belief in the importance of validation from others."
+5,FALSE,"The use of phrases like \'kind of... what Reddit does/is for,\' \'groomed,\' and \'not a bad thing\' indicate a defense of Reddit\'s behavior and the term \'brigading.\'"
+6,FALSE,"The use of phrases like \'it amazed me,\' \'mainstream news is biased,\' and \'real difference was made\' indicate a positive view of Reddit\'s ability to draw attention to important issues."
+row,delta,explanation
+631,FALSE,"The post expresses frustration with the generalizing and divisive language used by some social justice activists, arguing that it is as harmful as the sexism and racism they claim to oppose. The post suggests that this behavior goes against the goal of combating prejudice and discrimination, and may contribute to social conflict. It questions the validity of generalizations made about entire groups of people based on the actions of a few individuals."
+1444,TRUE,"The post argues that the effects of coffee are negligible and often a placebo, and that people who claim to enjoy the taste are lying to themselves. It questions the social and cultural factors that contribute to the popularity of coffee, suggesting that the desire for coffee may be driven by the age restriction placed on it and the novelty of consuming a previously forbidden substance. The author expresses a dislike for the taste of coffee and questions the societal value of spending money on it."
+1445,FALSE,"The post argues that in order for a society to exist, it is necessary to help the poor, otherwise they will revolt and disrupt social order. The post suggests that historical patterns of social conflict and revolutions support this claim. The author emphasizes the importance of treating poor individuals with respect and dignity in order to maintain social stability."
+833,TRUE,"The post defends Windows 8, arguing that it is not as bad as commonly portrayed. The post acknowledges that some people dislike the start screen, but suggests that it can be easily replaced with third-party software. The author expresses a positive personal experience with Windows 8 and questions the validity of criticisms against it."
+1328,FALSE,"The post challenges the idea that an absolute majority in elections, achieved with less than 50% of the total population\'s support, is fair and representative. The author argues that this system ignores the desires and interests of the majority of the population, and questions the legitimacy of governing based on a minority of votes. The post raises the issue of potential bias and exclusion in the democratic process."
+row,delta,explanation
+581,TRUE,"Negative sentiment, hedging, use of negative words (\'shitty\', \'suffering\', \'disastrous\'), use of 1st person pronouns, mention of death and health issues, use of quotation marks to express skepticism"
+1343,TRUE,"Negative sentiment, use of negative words (\'bad choice\', \'hates\', \'down payment\', \'pay through the nose\', \'restrictions\', \'damage\'), mention of financial expert\'s opinion, use of 1st person pronouns to express personal experience"
+101,TRUE,"Negative sentiment, use of negative words (\'arbitrary\', \'damaging\', \'damaging\', \'damaging\', \'susceptibility\', \'damage\', \'vulnerable\'), mention of scientific research, mention of personal experience, mention of opposing views, use of quotations, use of modality (\'would have been excited\')"
+950,FALSE,"Mention of movie adaptation, mention of differences between book and movie, comparison of different scenes in book and movie, mention of director\'s intentions, mention of changes in plot, use of modality (\'down play\', \'seemingly\'), comparison of different endings in book and movie, mention of specific scenes in book and movie"
+111,TRUE,"Negative sentiment, use of negative words (\'robbed\', \'hate\'), mention of tax evasion, mention of government corruption, mention of personal experience, use of modality (\'feels\', \'consider\', \'stupid thing\')"
+row,delta,explanation
+1370,FALSE,Uses first person pronoun \'I\' and expresses opinion about music singles ruining the album experience.
+267,TRUE,"Negative sentiment towards in-game ads, uses second person pronoun \'you\', includes negative words."
+625,TRUE,"Argument about gender identity and gender roles being socially constructed, uses words like \'societal expectations\' and \'taught\'."
+1423,TRUE,"Argument about reallocating military budget for public education and healthcare, provides link to support statement."
+190,FALSE,"Expresses positive sentiment towards government tracking and personal data collection, no specific stylistic features."
+row,delta,explanation
+48,TRUE,"The text uses positive words, positive sentences, and positive quotation. It also has a high level of word entropy and uses italics and bullet lists."
+1154,TRUE,"The text uses positive words, positive sentences, and positive quotation. It also has a high level of word entropy and uses italics."
+181,FALSE,The text does not use any stylistic features that can be used to determine delta.
+1036,FALSE,The text does not use any stylistic features that can be used to determine delta.
+1452,TRUE,"The text uses positive words, positive sentences, positive quotation, and bullet lists. It also has a high level of word entropy and uses italics."
+row,delta,explanation
+679,TRUE,Contains moderate hedging language. Discusses relevant features such as media control and privacy invasion.
+1497,TRUE,Mentions specific features like positive words and question marks. Provides specific examples and discusses the advantages of fast food.
+748,FALSE,Contains moderate hedging language. Discusses personal experiences and opinions around college students and rape culture.
+107,FALSE,Contains strong language. Expresses personal opinions and critiques of dog ownership based on various factors.
+223,TRUE,Discusses the reasons why Donald Trump would not make a good president including lack of foreign policy experience and potential conflicts of interest.
+row,delta,explanation
+37,TRUE,"The text includes phrases like \'I believe\' and \'I think,\' indicating the expression of an opinion. There are also positive and negative words used throughout the text."
+880,TRUE,"The text includes phrases like \'I believe\' and \'I think,\' indicating the expression of an opinion. There are also positive and negative words used throughout the text."
+957,TRUE,"The text includes phrases like \'I think\' and \'I believe,\' indicating the expression of an opinion. There are also negative words used throughout the text."
+525,TRUE,"The text includes phrases like \'I am,\' \'It seems,\' and \'I\'m not saying,\' indicating the expression of an opinion. There are also positive and negative words used throughout the text."
+1485,FALSE,The text is a mod post explaining changes to the subreddit\'s CSS. It contains technical information and does not express an opinion.
+row,delta,explanation
+1114,TRUE,"The text includes words related to animal rights, such as \'hunting,\' \'eating meat,\' and \'animal cruelty.\'"
+1330,TRUE,The text discusses the role of charities and their relationship to government and corporate interests.
+970,FALSE,The text discusses a theory about the movie \'The Prestige\' and does not contain any stylistic features.
+1140,TRUE,"The text discusses the idea of correlating student loan interest rates with majors and type of schools, using words related to education and finance."
+953,TRUE,The text discusses the concept of burial in a fantasy world and mentions the fantasy game \'Witcher 3\' as an example.
+row,delta,explanation
+701,FALSE,"This post expresses the belief that gender is solely determined by biological sex, and questions the reasoning behind gender dysphoria. The author acknowledges that they do not fully understand the complexity of the topic and is open to hearing different perspectives."
+259,FALSE,"This post expresses a personal opinion that, as a Vietnamese individual, the author sometimes wishes that the US had won the Vietnam War. The opinion is based on the perceived negative impact of communism on Vietnam\'s economy and border disputes with China. The author acknowledges the complexities of the issue and is open to hearing different perspectives."
+1173,FALSE,"This post holds the view that cyberbullying is not a problem, arguing that victims have the ability to block or avoid bullies online, unlike in the physical world. The author questions the severity of the issue and whether society should be concerned about it. They invite discussion and differing opinions on the topic."
+204,FALSE,This post expresses the belief that it is normal for adults to be attracted to individuals in their late teens. The author argues that late teens are physically developed and exhibit qualities that are sexually appealing. The author suggests that changes in societal norms and perceptions have led to the current taboo surrounding such attraction. The author distinguishes between consensual relationships and abusive behavior. They invite discussion on the topic.
+65,FALSE,"This post argues that a journalist who trolled Donald Trump during a press conference should be fired and shunned. The author believes that a journalist\'s role is to report the news, not create it, and views the journalist\'s behavior as unprofessional and an embarrassment to the nation. The author questions the double standard when it comes to disrupting presidential candidates and emphasizes the importance of treating the presidential race seriously and with respect."
+row,delta,explanation
+793,TRUE,"This text expresses a view that a higher minimum wage would hurt the lower and middle classes, supported by arguments about increased budget spending for companies, potential job loss, and increased prices for consumers."
+1218,TRUE,"The author believes that Social Justice Warriors (SJWs) can be obnoxious and harmful to their own cause, providing examples of the use of \'trigger warnings\' and \'safe spaces\'. They argue that these behaviors distract from effective discourse and engagement with social issues."
+408,TRUE,"The author argues that nonviolence is ineffective and that excessive violence, such as killing or enslaving children, is the most effective military tactic for a noble cause. They support their view with historical examples and strategic considerations."
+314,TRUE,"The author believes that opposing the Iran Deal (nuclear agreement) is not justified and highlights the potential negative consequences of not signing the deal, such as damaging the US reputation, starting a war, and losing allies. They argue that the deal provides strategic benefits and minimizes the risk of war."
+575,FALSE,"This text argues that there is nothing wrong with requiring vaccination for children to attend public schools, countering common counterarguments. The author believes that public schools have the right to set vaccination requirements for the safety and health of students, and refutes the notion that it infringes on personal freedoms or entitlement to education."
+row,delta,explanation
+91,TRUE,"The text expresses negative sentiment towards the stock market and rich people, using generalizations and negative language."
+521,FALSE,"The text argues that racism is more about cultural differences than skin color, using historical examples to support the viewpoint."
+577,TRUE,"The text argues that swearing is not harmful for children and should not be censored, using personal experience and questioning societal norms."
+929,TRUE,"The text argues that God should not be used to explain unexplained phenomena, using historical examples and reasoning."
+556,TRUE,"The text argues that the Democratic Party should have more options and candidates besides Hillary Clinton, using recent events and comparisons to other candidates."
+row,delta,explanation
+718,TRUE,"The text includes the phrase ""this probably isn\'t the best way to put it"" which indicates uncertainty."
+row,delta,explanation
+636,FALSE,The text argues that esports should not be considered sports because they lack physical exertion and compares them to games like poker and chess.
+1443,FALSE,The text argues that a communist society would not work because it would lose its ability to do business with other countries and lacks the motivation provided by money.
+80,FALSE,The text argues that day drinking is optimal because being drunk feels good but it suggests that being drunk while sleeping is wasteful and leads to negative health effects.
+53,FALSE,The text argues that the widespread belief in religion is a sign of human weakness because it satisfies fears of death and provides moral guidance which the author believes show a lack of judgment and wisdom.
+row,delta,explanation
+494,FALSE,"The text discusses the illegitimacy of the argument that \'offense is taken, not given\' and argues that while it is possible to behave as if something is offensive, this is different from \'offense is given, not taken\'. It references Stoicism and other philosophies to argue that while individuals can stoically endure offensive behavior, this does not mean that offensive behavior should be tolerated or that individuals should suffer silently. The explanation highlights the use of philosophical concepts, references to specific ideologies, and logical reasoning to support the argument."
+616,TRUE,"The text reveals the author\'s personal realization of being a closet sexist and working in a male-dominated industry. The author expresses a desire for change and understanding, as well as acknowledging the negative behavior exhibited towards women in the workplace. The explanation points out the stylistic use of personal narrative, self-reflection, and the author\'s recognition of the need for empirical evidence to support their view."
+1093,FALSE,"The text discusses the ineffectiveness of the \'Fuck Pao\' movement in ousting Ellen Pao from her position as CEO of Reddit. The author argues that the actions of the movement, including online harassment and insults, are unlikely to influence any significant change. The explanation highlights the use of logical reasoning, statistical data, and the author\'s perception of the situation to support the argument."
+301,FALSE,"The text states the author\'s belief that they have no moral obligation to pay for things that can be downloaded for free, regardless of their legality. The author discusses their personal experiences with piracy and the lack of difference between paying for a product and downloading it for free. The explanation points out the author\'s use of personal beliefs, comparisons between purchasing and piracy, and the argument that the responsibility for payment falls on the creators rather than the individual."
+1268,FALSE,"The text discusses the belief that the media is biased, corrupt, and primarily concerned with views. The author expresses frustration with the lack of empirical evidence provided by feminist sites and the perception of women\'s rights activists as whining and complaining. The explanation highlights the author\'s personal beliefs, criticism of feminist sites, and the desire for empirical evidence to support their view."
+row,delta,explanation
+0,FALSE,"This statement expresses a personal belief about intelligence and income, supported by the reasoning that those earning less than 40k/year are struggling financially and therefore questioning their intelligence. The author acknowledges potential exceptions, such as grad students and individuals who choose lower-paying careers for personal reasons."
+1,FALSE,"The author argues that life is fundamentally negative, citing boredom as a default mood, the effort required for pleasure, the power of suffering, and the lack of protection from the universe. The author seeks to have their view changed and acknowledges the subjective nature of the topic."
+2,TRUE,"The author believes that governors should not publicly express their opinions on the death penalty, as it can potentially influence public opinion and compromise the judicial system. They argue that governors should focus on their designated roles, such as executing laws, responding to disasters, and guiding economic policy."
+3,TRUE,The author asserts that free roaming cats should be treated as pests and destroyed if possible. They argue that cats negatively impact bird populations and should only be allowed indoors. The author expresses a desire for their view to be changed to consider other perspectives.
+4,TRUE,"The author argues in favor of deregulating various industries, drawing parallels to the deregulation of marijuana. They suggest that letting the market determine the success or failure of products and allowing individuals to make choices based on perceived dangers and benefits would be more effective than government regulation. The author invites logical arguments against their viewpoint."
+row,delta,explanation
+987,FALSE,"Uses language indicating personal opinion and experiences, mentions media sources and gives specific examples."
+1325,FALSE,"Strongly expresses personal opinion and experiences, includes link to an example supporting the view."
+902,TRUE,"States a clear opinion supported by personal beliefs, uses language indicating personal experience and examples."
+1293,TRUE,"Expresses a strong opinion and personal experiences, includes specific examples and a request for view change."
+1051,FALSE,"States a clear opinion supported by reasoning and personal beliefs, discusses the qualities and experience of the candidates."
+row,delta,explanation
+292,TRUE,Text discusses the pros and cons of interrupting Sanders\' rally. Uses words like \'right choice\' and \'positives\' to support the view.
+855,TRUE,Text argues for mass piracy as an effective method of preserving content. Mentions large number of downloads and potential benefits of piracy.
+993,TRUE,Text argues for legalizing polygamous marriage if gay and interracial marriage is legal. Mentions equality and child-rearing benefits as reasons.
+1242,TRUE,"Text argues that polygamous marriage should be legalized if gay and interracial marriage is legal. Mentions equality, child-rearing, and legal adjustments as reasons."
+258,TRUE,"Text supports the necessity, efficiency, and safety of GMOs. Mentions debunking myths and scientific consensus as evidence."
+row,delta,explanation
+1119,TRUE,Contains negative words and strong language against hate subs
+1382,TRUE,Includes moral arguments and mention of psychology
+851,TRUE,Refers to discrimination against straight male in a gay bar
+909,TRUE,Discusses legal and moral arguments against incestuous marriage
+737,TRUE,Argues against the internet mob and defends Ellen Pao
+row,delta,explanation
+1185,TRUE,Frequency of negative words personal pronouns and hedges
+1157,TRUE,Frequency of positive words personal pronouns and quotations
+396,TRUE,Negative words positive words and personal pronouns suggest strong sentiment
+1427,TRUE,Frequency of negative words personal pronouns and hedges
+952,FALSE,Frequency of personal pronouns and hedging language
+row,delta,explanation
+1513,TRUE,"The use of the words ""logical inconsistency"" suggests a change in belief supported by logical reasoning."
+1010,FALSE,"The use of the words ""callous"" and ""flippant"" suggests a negative viewpoint towards the phrase being discussed."
+1319,TRUE,"The use of the words ""gain more than it would lose"" implies a weighing of pros and cons to determine the benefits and drawbacks of the Democratic Party taking a pro-gun rights stance."
+527,TRUE,"The use of the words ""never"" and ""myriad feminists"" suggests a disagreement with the claim made by a certain group of feminists."
+1314,TRUE,"The use of the phrase ""no good reasons"" indicates a strong belief that there are no valid arguments against wearing a helmet while riding a bicycle."
+row,delta,explanation
+0,FALSE,"The post discusses the belief that eco-friendly energy, such as wind farms and solar power, is the best option for the long run. The argument includes the idea that these types of energy sources will pay for themselves over time and are better alternatives to fossil fuels. The post also mentions the potential of hydroelectric power in developing countries. The view is supported by reasons like the abundance of water resources and the potential benefits to countries heavily reliant on fossil fuels."
+1,FALSE,"The post argues that considering suicide as selfish is incorrect. The view states that the person who committed suicide was feeling bad and did not want to live anymore. It argues that labeling suicide as selfish is a selfish perspective from the people left behind, as they are thinking about themselves and not wanting to lose the person. The argument challenges the notion that suicide is selfish and asks for a change in this perspective."
+2,FALSE,"The post discusses the belief that victims of child sexual abuse should not have any moral standing to wish harm upon non-offending pedophiles. It highlights a specific comment made by a user who supports rape and murder of non-offending pedophiles, arguing that the user\'s own abuse does not excuse the comments made towards non-offending individuals with pedophilic tendencies. The post views these comments as more dangerous to society than the actions of the abuser. The view challenges the perspective of the user and seeks a change in their view."
+3,FALSE,"The post expresses the belief that an individual\'s vote in an election does not matter due to statistical insignificance. The argument is that a single vote is statistically unlikely to make a significant difference, negating the impact of an individual\'s vote in a larger picture. The post seeks a change in this perspective by asking for arguments that refute the statistical insignificance of a single vote."
+4,FALSE,"The post discusses the belief that it is not possible to know if teachers should make more money. It challenges the assumption that teachers are underpaid based on a labor theory of value. It argues that prices cannot be determined beyond supply and demand and since teachers do not operate in a free market, it is difficult to determine the accuracy of their salaries. The view questions the validity of the belief that teachers should make more money."
+row,delta,explanation
+927,TRUE,Negative words and first-person pronouns indicate a strong emotional and personal opinion.
+735,TRUE,Positive words and first-person pronouns suggest a strong endorsement of Barack Obama\'s presidency.
+119,TRUE,"First-person pronouns and phrases like ""I can\'t help but feel"" suggest a personal perspective and opinion."
+694,TRUE,Negative words and second-person pronouns indicate a strong stance on Reddit\'s policy regarding free speech.
+766,TRUE,Negative words and first-person pronouns suggest a personal opinion against water privatization.
+row,delta,explanation
+593,TRUE,"Positive words, 2nd person pronoun, negative words, positive words, 1st person pronouns, 1st person plural pronoun"
+598,TRUE,"Positive words, 2nd person pronoun, negative words, positive words, 1st person pronouns, 1st person plural pronoun"
+231,TRUE,"Positive words, 2nd person pronoun, negative words, positive words, 1st person pronouns, 1st person plural pronoun"
+286,TRUE,"Positive words, 2nd person pronoun, negative words, positive words, 1st person pronouns, 1st person plural pronoun"
+654,TRUE,"Positive words, 2nd person pronoun, negative words, positive words, 1st person pronouns, 1st person plural pronoun"
+row,delta,explanation
+480,TRUE,"The text uses negative words \'harmful\', \'worries\', \'uncomfortable\', suggesting negative sentiment towards Amazon Echo. It also mentions the concern of invasion of privacy and the comparison to Skynet, which indicates a negative view."
+924,TRUE,"The text uses negative words \'ban\', \'wrong\', \'fear\', suggesting negative sentiment towards the ban on burqas. It also mentions the loss of identity and the potential for crime, indicating concerns and negative views."
+1184,TRUE,"The text uses negative words \'flawed\', \'serious gaps\', \'lacking\', suggesting negative sentiment towards liberal education. It also mentions the inability to answer various questions, indicating a negative view."
+1240,TRUE,"The text uses negative words \'butthurt\', \'afraid\', \'fear\', suggesting negative sentiment towards elite driver insurance. It also mentions the exclusion of certain individuals and the fear of misuse of the technology, indicating concerns and negative views."
+1500,TRUE,"The text uses negative words \'claws\', \'misleading\', \'shake off\', suggesting negative sentiment towards prescriptivism. It also mentions the difficulty in accepting certain language forms, indicating a negative view."
+row,delta,explanation
+538,TRUE,Uses words like \'suspicion\' and \'reasonable\' to express doubt and willingness to consider counter-arguments.
+535,FALSE,Expresses personal preference and relies on anecdotal evidence without providing strong reasoning or evidence.
+771,TRUE,Provides reasoning and evidence to support the belief and acknowledges alternative viewpoints.
+558,FALSE,Expresses personal preference without providing strong reasoning or evidence.
+982,FALSE,Expresses a strong belief and provides reasoning and evidence to support it.
+row,delta,explanation
+1166,TRUE,"This post expresses the belief that the popularity of ""Whose Line is it Anyway"" on Reddit is driven by its cult status and the desire for social acceptance by those who feel ostracized. The explanation includes references to the appearance and characteristics of the bronies as well as the demographic data from a survey of bronies."
+777,TRUE,The post argues that financial abortion should only be supported if there is a social safety net in place to ensure the child\'s well-being. The explanation highlights the premise that if a father opts out of paying child support the state should step in to provide financial support through welfare. It addresses potential counterarguments and emphasizes the importance of care for children.
+942,TRUE,The post contends that Republicans should stop fighting against Obamacare because it has been upheld by the Supreme Court and fighting against it is futile. The explanation suggests that Republicans may continue to oppose Obamacare out of bitterness towards President Obama comparing their behavior to that of a jealous child. It also mentions voter suppression tactics and the impact of the Sandy Hook massacre.
+299,TRUE,The post argues against euthanizing wild animals that attack hikers in national parks stating that it is not appropriate to alter the natural habitat for human convenience. The explanation emphasizes the purpose of national parks as places of preservation and discusses the potential danger of wild animals encountered by hikers.
+495,TRUE,The post expresses the belief that a cure for cancer may never be made public due to conspiracy theories suggesting that the cancer treatment industry would suffer financially. The explanation raises the possibility of a plausible conspiracy while acknowledging the desire not to believe it.
+row,delta,explanation
+1338,TRUE,Positive words #positive words #positive words
+754,TRUE,Positive words #positive words #positive words
+row,delta,explanation
+169,TRUE,Positive sentiment first person pronoun (#views#) links (#people#) positive words (#support#)
+446,TRUE,Positive sentiment negative words (#unconstitutiona#)
+288,TRUE,Negative sentiment indefinite article (#not#) negative words (#bad##hate#)
+1117,TRUE,Positive sentiment positive words (#best#)
+331,TRUE,Positive sentiment positive words (#better#) negative words (#leaving#) positive and negative examples (#better# #well paying##stable#)
+row,delta,explanation
+0,TRUE,"The text includes negative words and hedges, suggesting a change in view."
+1,FALSE,"The text includes negative words and hedges, suggesting no change in view."
+2,TRUE,"The text includes negative words, suggesting a change in view."
+3,TRUE,"The text includes negative words, hedges, and a quotation, suggesting a change in view."
+4,TRUE,"The text includes negative words and hedges, suggesting a change in view."
+5,FALSE,"The text includes positive words and a URL, suggesting no change in view."
+6,TRUE,"The text includes positive words and a URL, suggesting a change in view."
+7,FALSE,"The text does not include any keywords, suggesting no change in view."
+8,FALSE,"The text does not include any keywords, suggesting no change in view."
+9,FALSE,"The text does not include any keywords, suggesting no change in view."
+row,delta,explanation
+140,TRUE,"This post expresses racist views towards Gypsies, using negative words and stereotypes."
+268,TRUE,"This post argues against the idea of equal value for all humans, using subjective measures."
+816,FALSE,"This post discusses the idea of restricting immigration based on ethnic history, without expressing explicit racism."
+167,TRUE,"This post argues that philosophy is not distinct from the scientific method, using reasoning and examples."
+1055,FALSE,"This post discusses the ethics of killing Hitler using a time machine, considering potential consequences."
+row,delta,explanation
+1267,TRUE,"Progressive minimum wage system is proposed, similar to progressive tax system."
+1283,TRUE,Becoming an online entertainer is seen as a risky career due to uncertainties of success.
+1027,FALSE,There are competing opinions on whether transgender people should be allowed to choose restrooms.
+49,TRUE,The word \'bulbous\' is argued to be grosser than the word \'moist\' because it has no positive connotations and requires a more complicated mouth shape to say.
+row,delta,explanation
+302,FALSE,The text includes the words \'I believe\' indicating a personal opinion.
+592,TRUE,"The text includes negative words like \'annoying\', \'stupid\', and \'assholes\', indicating a negative viewpoint."
+900,TRUE,"The text includes negative words like \'inconsiderate\', \'unthinkable\', and \'asshole\', indicating a negative viewpoint."
+104,TRUE,"The text includes negative words like \'annoying\', \'wake\', and \'fucking\', indicating a negative viewpoint."
+1186,TRUE,"The text includes negative words like \'problems\', \'violence\', and \'fighting\', indicating a negative viewpoint."
+row,delta,explanation
+730,TRUE,"strong emphasis on logical argument and use of evidence, mentions of confirmation bias in relation to own view"
+1308,FALSE,mentions of personal experience and desire for more passionate argument
+1219,FALSE,"personal experience as evidence, mention of own belief as a parent"
+1234,FALSE,mention of personal observation and specific examples
+1373,TRUE,use of evidence and logical argument to support view
+row,delta,explanation
+321,TRUE,"Uses words like \'superior\', \'fundamentals\', \'benefits\', and \'more\', and includes comparisons to cricket."
+650,FALSE,Includes personal anecdotes and subjective statements.
+1331,FALSE,Includes personal anecdotes and subjective statements.
+1398,FALSE,Includes personal anecdotes and subjective statements.
+1224,TRUE,"Uses words like \'moron\', \'breed\', and \'same\', and includes comparison to Anti-Vaxxers."
+row,delta,explanation
+309,TRUE,"The text mentions Donald Trump and his potential impact on the 2016 presidency, suggesting that a Trump/Kasich ticket would be the best chance for the Republican party. The author provides reasons and analysis to support this view."
+1265,TRUE,"The text argues that the media does not have a deliberate agenda, but instead is driven by profit and consumer demand. The author suggests that the media is made up of average individuals who are just trying to do their jobs and cater to what sells."
+1387,TRUE,The text argues that primates should be considered non-human persons and should not be subjected to invasive experiments without their informed consent. The author provides reasons and examples to support this view.
+1171,TRUE,"The text argues that faith, defined as claiming to know something without evidence, is a force for evil in the world. The author suggests that relying on faith as a method of knowing prevents the pursuit of truth and can lead to conflict."
+51,TRUE,"The text argues that the term whore/slut"" is not inherently negative and should not be used to shame individuals who have multiple sexual partners. The author challenges societal double standards regarding sexual behavior based on gender and applauds individuals who embrace their sexual desires."""
+row,delta,explanation
+729,TRUE,The use of negative words #gendered language and #hedges suggests a negative view of feminism.
+638,TRUE,The use of negative words and #hedges suggests a negative view of reducing energy consumption for climate change.
+1227,TRUE,The use of negative words suggests a negative view of police officers not shaking hands.
+108,TRUE,The use of negative words suggests a negative view of divorce and alimony.
+row,delta,explanation
+1,FALSE,The text expresses a personal belief and does not attempt to convince the reader. It includes phrases like \'I believe\' and \'my view\' which indicate a subjective opinion.
+2,TRUE,"The text presents an argument about the correct solution to the trolley problem, and the author is open to changing their view. The use of phrases like \'proper solution\' and \'ethical under either mindset\' suggest a persuasive tone."
+3,FALSE,The text expresses a subjective opinion about the Kurds being the \'good guys\' and argues for Western nations to form an alliance with them. It includes phrases like \'I believe\' and \'I think this line of thinking is naive\' which indicate a subjective opinion.
+4,FALSE,The text presents a personal belief about the effectiveness of open and equal debate in combating ignorance and hate. It includes phrases like \'I disagree\' and \'I think for these reasons\' which indicate a subjective opinion.
+5,TRUE,The text presents an argument against tipping waitresses extra for their appearance and criticizes such behavior. It uses phrases like \'makes you a lesser man\' and \'creates power balance\' to express a persuasive tone.
+row,delta,explanation
+1301,TRUE,Uses definite article \'the\' and 2nd person pronoun \'you\'
+817,TRUE,Uses definite article \'the\' and indefinite article \'a\'
+925,TRUE,Uses definite article \'the\' and 2nd person pronoun \'you\'
+846,TRUE,Uses definite article \'the\' and indefinite article \'a\'
+1402,TRUE,Uses definite article \'the\' and indefinite article \'a\'
+row,delta,explanation
+248,TRUE,"Contains phrases such as \'I think\', \'I mean\' and \'I believe\', indicating an expression of opinion."
+1369,TRUE,"Uses phrases such as \'I think\', \'I admit\' and \'I realize\' to express personal beliefs and opinions."
+424,TRUE,"Uses phrases like \'I\'ve always thought\' and \'I think it\'s ridiculous\', expressing personal opinions and beliefs."
+968,TRUE,"Uses phrases like \'I\'ve always kind of thought\' and \'I think it\'s ridiculous\', expressing personal opinions and beliefs."
+1432,TRUE,"Contains phrases such as \'I think\' and \'I feel\', indicating an expression of opinion."
+row,delta,explanation
+959,TRUE,"Use of negative words, personal experience, and reference to research support the view that love is just a construct for survival behaviors."
+1296,TRUE,Reference to personal experience and discussion of self-defense justify the view that it should be customary for kids to fight back against abusive parents.
+177,TRUE,In-depth analysis of the phrase \'be yourself\' and discussion of personal experiences support the view that it is a useless piece of advice.
+211,TRUE,Argument for covering the costs of birth and contraceptives before implementing pro-life laws is supported by concerns about adoption and risky pregnancies.
+270,FALSE,Discussion of personal views on gender-neutral aisles at Target lacks specific stylistic features to support the claim.
+row,delta,explanation
+1201,TRUE,"The text discusses the similarities between the pay of CEOs and athletes/movie stars arguing that both are subject to supply and demand. It also addresses the criticism that CEOs are ""paid too much"" and highlights the temporary nature of their positions."
+978,TRUE,The text argues for a federal law banning the Confederate Flag from public and municipal buildings as well as phasing out names associated with the Confederation from public spaces. The rationale includes the offensiveness of the flag to black citizens and its association with treason. The text also mentions the need to address racial biases and promote racial equality.
+88,FALSE,"The text expresses a belief that r/changemyview promotes groupthink by not challenging nonconforming or outlying ideas. The text discusses the poster\'s exposure to the concept of groupthink and presents a personal anecdote of a friend who dismisses posts in the subreddit as ""stupid."""
+669,FALSE,The text expresses a fear of being falsely accused of rape and suggests refraining from sexual activity as a result. The poster acknowledges that the fear may be exaggerated and invites others to challenge their reasoning.
+row,delta,explanation
+1348,FALSE,The text uses words like \'weird\' to express a personal opinion.
+613,TRUE,The text expresses a personal opinion and includes a personal story to support the argument.
+406,TRUE,The text presents a personal belief and provides evidence and reasoning to support it.
+647,TRUE,The text presents a personal belief and provides reasoning and evidence to support it.
+892,FALSE,The text expresses a personal opinion about the top replies in the subreddit.
+row,delta,explanation
+503,FALSE,"The text discusses the topic of giving every citizen a personal retirement fund and mentions investing it in an index fund. It provides reasons why this would be beneficial, such as aiding retirement with dignity and leveraging a small investment over a long timeframe. The text also mentions the potential program cost and the idea of extending it to current citizens."
+255,FALSE,The text discusses the topic of college tuition being government subsidized and presents reasons against it. It argues that not all jobs requiring a college degree are necessary and that subsidizing college could make degrees necessary for everyone. The text also mentions government-subsidized education programs that already exist and questions the necessity of a college degree for everyone.
+1355,FALSE,"The text discusses the idea of using gender-neutral pronouns like \'xe\' in everyday language. It acknowledges potential concerns about the word being associated with certain groups, but argues that using gender-neutral pronouns would be more accurate and easier. The text also mentions the benefits of using gender-neutral pronouns in everyday language."
+1493,FALSE,The text discusses the belief that spending every waking hour of one\'s teenage life trying to get into a good college is unnecessary. It mentions being a bad student and not wanting to invest time and energy into what is perceived as unnecessary. The text questions the importance of a 4.0+ GPA and going to the best colleges and expresses a desire to help the world in different ways.
+579,FALSE,"The text discusses the contradiction between the belief that gender does not determine behavior or preferences and the belief that transgender people are born that way. It presents the idea that traditional gender roles and stereotypes are not innate, but also acknowledges that many transgender people take on traditional roles of their new genders after transitioning."
+row,delta,explanation
+418,TRUE,The use of words like \'no longer\' and \'anymore\' indicate a change in cultural relevance.
+1123,FALSE,The use of phrases like \'I feel\' indicate a subjective opinion.
+1354,TRUE,The use of phrases like \'I think\' and \'maybe\' indicate a subjective opinion.
+1353,TRUE,The use of phrases like \'I don\'t understand\' indicate a subjective opinion.
+228,TRUE,The use of phrases like \'I think\' and \'maybe\' indicate a subjective opinion.
+row,delta,explanation
+571,TRUE,The text discusses the benefits of a shrinking population on work availability and resource distribution.
+158,TRUE,The text argues that only members of a political party should be permitted to seek and obtain that party\'s nomination.
+1131,FALSE,"The text discusses the author\'s struggle with existential crisis after taking medication and seeking ""the truth"" about life and mortality."
+1007,FALSE,"The text describes the author\'s inability to return to a ""normal"" state after experiencing an existential crisis."
+row,delta,explanation
+813,TRUE,"This post discusses biased viewpoints towards different music genres using words such as ""ignorant  biased and white-centric."" It also mentions the preference of one genre over another and the idea of cultural closed-mindedness. These words and phrases indicate a negative perspective towards certain viewpoints."
+1317,TRUE,"This post argues that free trade with countries of significantly less wealth harms the working class of the ""wealthy"" countries. It mentions the negative consequences of transferring factories to places with cheaper labor and references the negative effects of NAFTA on places like Detroit. The use of words such as ""unfairly disadvantages"" and ""inequality"" express a negative viewpoint towards this aspect of free trade."
+629,TRUE,"In this post the author presents the viewpoint that it is morally wrong to eat animals. It discusses the author\'s belief that humans have a moral obligation to not needlessly kill and eat animals and questions the logic of considering certain animals as food based on their level of self-sufficiency and intelligence. Words such as ""morally wrong"" and ""hypocritical"" convey a negative stance towards eating animals."
+1176,TRUE,The author argues that tipping at restaurants should not be based on a percentage of the cost of the meal. They express a belief that the current tipping system is non-egalitarian and leads to inequality among servers. The author suggests a system based on the length of time spent in the restaurant and the attention required rather than a percentage-based system. This post presents a critical viewpoint towards the current tipping practice.
+561,TRUE,"This post challenges the belief that certain closely related sports are more difficult than others. It discusses the idea that advantages in one sport may actually be disadvantages to the opposing team and provides examples from baseball/softball and the author offers a critical perspective towards comparing the difficulty of sportfootball/rugby. The post questions the notion of one sport being inherently more difficult than another. Using words such as ""advantage"" and ""disadvantage given the predicted decrease in available jobs due to automation."""
+1,TRUE,This post argues that direct democracy is more sustainable than representative democracy. It states that representatives often vote in their own self-interest rather than for the good of the people. The author also questions the need for representatives if people are capable of directly voting on legislation. The post mentions recent examples of political figures and celebrities being criticized for their actions or opinions.
+2,FALSE,"This post states a personal preference for apples over oranges. It mentions various reasons why apples are superior, such as their versatility in creating alcohol and food products, their diversity in types, and their popularity in pop culture. The author also challenges the notion that apples and oranges cannot be compared, asserting that apples are the better fruit."
+3,FALSE,This post argues that karma on Reddit contributes to a toxic atmosphere and stifles open discussion. The author believes that people are more concerned with gaining karma and pleasing the masses than expressing their own opinions. The post mentions examples of controversies and conflicts related to karma and social justice movements. The author expresses a desire for a website that allows for free speech without the fear of negative consequences.
+4,TRUE,"This post criticizes political correctness and the social justice movement, arguing that it has gone too far. The author mentions several examples of controversies and conflicts, such as the debate over Amy Schumer\'s jokes, criticisms of comedians like Jerry Seinfeld and Patton Oswalt, and infighting amongst social justice advocates. The post questions the importance and impact of these issues in comparison to larger societal problems."
+row,delta,explanation
+772,TRUE,"This post discusses the ethical obligation for companies to offer remote work options, providing reasons such as the availability of digital tools and the ability to communicate through email and phone. The explanation includes the use of words like \'office jobs,\' \'computer,\' and \'business applications.\' There is also a mention of \'knowledge workers\' and \'upper management,\' indicating a focus on professional settings."
+622,FALSE,"This post argues that the term \'white trash\' is racist to every race except whites, highlighting the assumption that white people are inherently not \'trash\' while other races are. The explanation mentions words like \'white,\' \'black,\' \'Mexican,\' and \'nigger,\' demonstrating the focus on racial identity and stereotypes."
+283,TRUE,"The post claims that using drones as weapons should be banned, comparing them to chemical and biological agents that are also banned. The explanation discusses the use of words like \'war,\' \'weapons,\' \'killing,\' and \'casualties,\' suggesting a focus on the ethical implications of using drones in warfare."
+1365,FALSE,"The post argues that ads on Hulu are similar to ads on cable TV and that people who complain about them are spoiled. The explanation mentions words like \'cable TV,\' \'streaming services,\' \'entertainment,\' and \'advertising,\' indicating a discussion about media consumption and consumer behavior."
+row,delta,explanation
+285,TRUE,Contains words related to economic growth being bad for resource strain in the future.
+1263,TRUE,Brings up the argument that complaining about cultural appropriation perpetuates racism and self segregation.
+1144,TRUE,Argues that vegetarianism is senseless because it\'s more expensive than eating meat and takes resources away from humans.
+664,TRUE,Claims that the word \'natural\' is meaningless and discusses its implications.
+56,TRUE,Suggests that disarming front line police officers can reduce gun-related homicide by reducing the need for criminals to carry firearms.
+row,delta,explanation
+0,TRUE,"The text contains negative words, such as \'sick\' and \'suck\', which contribute to the negative sentiment."
+1,FALSE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+2,TRUE,"The text contains negative words, such as \'dangerous\', which contribute to the negative sentiment."
+3,TRUE,"The text includes the use of first-person pronouns, indicating a personal belief or perspective."
+4,TRUE,"The text includes the use of first-person pronouns, indicating a personal belief or perspective."
+5,FALSE,"The text includes words such as \'should\' and \'noble cause\', suggesting a sense of moral judgment."
+6,FALSE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+7,TRUE,"The text contains negative words, such as \'dangerous\', which contribute to the negative sentiment."
+8,FALSE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+9,FALSE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+10,TRUE,"The text includes negative words, such as \'corrupt\' and \'biased\', which contribute to the negative sentiment."
+11,TRUE,"The text includes the use of first-person pronouns, indicating a personal belief or perspective."
+12,TRUE,"The text contains negative words, such as \'awful\' and \'disastrous\', which contribute to the negative sentiment."
+13,TRUE,"The text includes the use of first-person pronouns, indicating a personal belief or perspective."
+14,FALSE,"The text includes a bullet list, which suggests organized presentation of arguments."
+15,TRUE,"The text contains a negative word, such as \'unsafe\', which contributes to the negative sentiment."
+16,TRUE,"The text includes the use of first-person pronouns, indicating a personal belief or perspective."
+17,TRUE,"The text includes the use of first-person pronouns, indicating a personal belief or perspective."
+18,TRUE,"The text includes the use of first-person pronouns, indicating a personal belief or perspective."
+19,FALSE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+20,TRUE,"The text contains negative words, such as \'dismal\' and \'horrible\', which contribute to the negative sentiment."
+21,TRUE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+22,TRUE,"The text contains negative words, such as \'ineffective\' and \'awful\', which contribute to the negative sentiment."
+23,FALSE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+24,FALSE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+25,FALSE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+26,TRUE,"The text contains negative words, such as \'shitty\' and \'bother\', which contribute to the negative sentiment."
+27,FALSE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+28,FALSE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+29,TRUE,"The text contains negative words, such as \'insulting\' and \'shitty\', which contribute to the negative sentiment."
+30,FALSE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+31,TRUE,"The text contains negative words, such as \'awful\' and \'horrible\', which contribute to the negative sentiment."
+32,FALSE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+33,TRUE,"The text contains negative words, such as \'out-of-hand\' and \'awful\', which contribute to the negative sentiment."
+34,FALSE,"The text includes positive words, such as \'effective\' and \'right\', which contribute to the positive sentiment."
+35,FALSE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+36,TRUE,"The text contains negative words, such as \'dangerous\' and \'undermining\', which contribute to the negative sentiment."
+37,TRUE,"The text includes the use of first-person pronouns, indicating a personal belief or perspective."
+38,TRUE,"The text contains negative words, such as \'dangerous\' and \'undermining\', which contribute to the negative sentiment."
+39,FALSE,"The text includes the use of first-person pronouns, indicating a personal belief or perspective."
+40,FALSE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+41,TRUE,"The text contains negative words, such as \'abuse\' and \'treatment\', which contribute to the negative sentiment."
+42,TRUE,"The text includes the use of first-person pronouns, indicating a personal belief or perspective."
+43,FALSE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+44,FALSE,"The text includes a link to a source, which suggests that the opinion is supported by external evidence."
+row,delta,explanation
+1129,FALSE,"This post discusses the idea that being transgender perpetuates heteronormative society and suggests that fewer people would identify as transgender if society did not restrict people based on gender. The post argues that societal norms and stereotypes dictate what boys and girls should do or like, and that individuals should be free to express themselves regardless of their physical sex. The post suggests that identifying as transgender based on preferences or outward presentation perpetuates heteronormative ideologies."
+198,FALSE,"This post argues that many parents have a lopsided reaction when people mention the joys of not having children. The post observes that society tends to prioritize and celebrate parenthood, while reacting aggressively towards the idea of not having children. The post suggests that this reaction may be due to the irreversible nature of parenting and the social pressure to conform. The post compares it to defending the practice of getting a tattoo. The post questions the aggressive pushback and highlights the imbalance in societal reactions."
+159,FALSE,This post argues that the classification of humans into \'races\' is meaningless and that there is more genetic variation within human populations than between them. The post mentions a study by Richard Lewontin and highlights that the concept of race is a social and cultural construct rather than a biological one. The post challenges the idea that significant differences exist between different \'races\' and suggests that focusing on individuality and open-mindedness would result in better understanding and unity.
+227,FALSE,This post suggests that a significant percentage of non-voters abstain from voting because they lack confidence in any political party. The post argues that countries should have a \'no confidence\' vote in elections to increase turnout and gain a better understanding of the public\'s perception of the political climate. The post mentions efforts to increase voter turnout but notes their limited effectiveness. The post suggests that a \'no confidence\' vote could provide valuable insight and encourage voter engagement.
+1247,FALSE,"This post argues that being quick to anger and violence should be considered a mental illness or disability, and that society should be more proactive in treating and preventing such behavior. The post discusses the tendency of some individuals to resort to violence or aggression as a solution or immediate reaction to a problem, and questions how they reach adulthood without receiving treatment or therapy. The post compares emotional control to rational decision-making and suggests that violence and anger are forms of self-harm."
+row,delta,explanation
+733,TRUE,"Positive words (\'optimistic\'), 2nd person pronoun (\'your\'), negative words (\'difficult\'), word entropy, sentence type-token ratio"
+1404,FALSE,"Negative words (\'wrong\'), positive words (\'right\'), 1st person pronouns (\'I\'), 1st person plural pronoun (\'we\'), negative words (\'resented\'), definite articles (\'the\'), question marks, word entropy, sentence type-token ratio"
+1143,TRUE,"Negative words (\'bad\', \'wrong\', \'can\'t\'), positive words (\'nice\', \'better\', \'easier\'), 1st person pronouns (\'I\', \'myself\'), definite articles (\'the\', \'this\'), question marks"
+1274,FALSE,"Negative words (\'against\', \'victims\', \'suffer\', \'irresponsible\'), positive words (\'viewing\', \'relieve\', \'lower\'), 1st person pronouns (\'I\', \'my\'), definite articles (\'the\', \'this\'), question marks, word entropy, sentence type-token ratio"
+row,delta,explanation
+335,TRUE,Author believes the US will continue to have a two-party system due to competition and the advantage of incumbency.
+966,TRUE,Author believes GPA provides a more accurate representation of academic achievement compared to the British honours degree system.
+674,FALSE,"Author believes that the predictions made in the Torah, such as the temple\'s destruction and the scattering of Jews, make a strong case for the truth of the Torah."
+87,TRUE,"Author argues that Hitler was a terrible leader due to his economic policies, military alliances, and persecution of his own people."
+980,FALSE,"Author believes Bernie Sanders, as an independent, should not be allowed to run as the leader of the Democratic Party."
+row,delta,explanation
+435,FALSE,"This post contains a controversial and sexist view about women being inferior to men in most aspects of life, backed up by personal observations and limited sample size. The author is open to hearing another point of view."
+1486,FALSE,"This post argues that requiring able-bodied, mentally capable adults who receive welfare to work is not a form of slave labor. The author questions the Democratic and Socialist parties\' opinions and believes that workfare is a fair requirement."
+1439,FALSE,"This post suggests that the outrage, emotional investment, and hate surrounding the Tsarnaev case in Boston are blown out of proportion. The author believes that the Boston Strong mentality has become excessive and that similar atrocities receive less attention."
+1094,FALSE,This post asserts that climate change should be the top priority for politicians and claims that not enough is being done to address it. The author acknowledges the complexity of the issue and the consensus among scientists but believes that more action is needed.
+680,FALSE,This post expresses the view that the Greeks are acting entitled and compares their behavior to that of children. The author argues that the Greek government\'s overspending and failure to address their debt problems are the causes of their current difficulties.
+row,delta,explanation
+827,TRUE,Uses 1st person pronouns positive words and question marks to express an opinion.
+443,TRUE,Uses 1st person pronouns and negative words to express an opinion.
+375,TRUE,Uses 1st person pronouns to express an opinion.
+1456,TRUE,Uses 1st person pronouns to express an opinion.
+1285,TRUE,Uses 1st person pronouns and negative words to express an opinion.
+row,delta,explanation
+120,TRUE,"Uses 1st person pronouns, negative words, and hedges"
+692,TRUE,Contains positive words and links
+779,TRUE,Contains negative words and hedges
+83,TRUE,Contains positive words and hedges
+1059,TRUE,Contains negative words and hedges
+row,delta,explanation
+186,TRUE,Uses definite article \'the\' in the title
+876,TRUE,Uses definite article \'the\' in the title
+372,TRUE,Uses definite article \'the\' in the title
+614,FALSE,Does not use definite article \'the\' in the title
+703,FALSE,Does not use definite article \'the\' in the title
+row,delta,explanation
+133,TRUE,The post discusses European countries taking in refugees and argues that they should only take in female refugees because women and girls are more vulnerable in conflicts and refugee camps. It provides evidence of the harm women face and the higher criminality of men. It also suggests that having clear lines on who can enter and cannot creates less false hope and unnecessary deaths.
+1260,FALSE,The post discusses the concerns people have about big companies like Google storing personal information. The author argues that it is not a big deal because companies primarily use the information to improve their services and personalize ads. They also mention that individuals are just a number to these companies and that they couldn\'t care less about what a random stranger knows about them.
+1294,FALSE,"The post argues that a diploma is essentially a receipt from the university. The author believes that there are alternative educational options that are nearly as good as universities, such as Coursera and free classes from reputable institutions. They suggest that paying for a bachelor\'s degree is overrated and that passing a knowledge test based on self-study should be considered equally qualified for a job."
+81,TRUE,"The post suggests that WIC money, a program that provides assistance to low-income women and children, should instead be used to provide free abortions to low-income women. The author argues that women who need WIC are not in a financial position to raise a baby and that an abortion would be cheaper than long-term government support. They acknowledge that not all taxpayers support abortion but argue that taxpayers are not consulted on other moral matters either. They also mention that individuals should not rely on government programs to raise children."
+725,FALSE,"The post argues that nations should be allowed to claim celestial bodies, despite it being outlawed by the Outer Space Treaty. The author believes that allowing nations to claim celestial bodies would incentivize space exploration and competition, leading to economic growth, technological advancements, and the survival of the human race."
+row,delta,explanation
+1180,TRUE,The text mentions the positive impact of modern technology providing examples of beneficial inventions such as 3-D printed human skin and autonomous decision-making rovers on Mars.
+983,TRUE,The author argues that affirmative action programs should be extended to include conservative political views in order to promote diversity and critical thinking within universities.
+1098,TRUE,The author argues that the current anti-abortion movement is more focused on punishing sexually active women than protecting the unborn citing the lack of support for birth control paid maternity leave and aid to families among those who oppose abortion.
+481,TRUE,The author suggests heavily taxing any food consumption beyond recommended daily values to address issues of food scarcity and obesity. The argument is made to discourage excessive food consumption and ensure a basic safety net for those in need.
+478,TRUE,The author criticizes the card economy of Hearthstone particularly after the Gnomes vs. Goblins expansion arguing that it is unbalanced shallow and benefits those who pay for packs. The use of legendaries and random chance cards is also perceived as problematic.
+row,delta,explanation
+671,TRUE,The post discusses the negative impact of superhero movies on modern cinema using negative words and hedges to express the opinion.
+634,TRUE,The post argues that the UK fox-hunting ban is inconsistent and nonsensical using negative words and hedges to express the opinion.
+1508,FALSE,The post expresses suicidal thoughts and emotions.
+707,TRUE,The post expresses dislike for the Foo Fighters and asks for help in changing the view.
+834,TRUE,"The post expresses the belief that a driven and intelligent person should be able to find success, using positive words and hedges to express the opinion."
+row,delta,explanation
+330,TRUE,"This post discusses the relationship between right-wing extremism and racism, arguing that they are not inherently linked. The author is a Danish libertarian and questions the association of racists with right-wing extremism."
+599,FALSE,This post advocates for the euthanasia of children with severe mental disabilities. The author argues that it is a humane solution and a more efficient use of resources. The post acknowledges that it is a taboo view.
+661,TRUE,This post argues that the first goal of the human race should be to achieve Artificial General Intelligence (AGI). The author believes that achieving AGI could lead to species immortality and that it is worth the risk of potential extinction.
+941,FALSE,This post argues against giving participation trophies to children who do not place in the top three. The author believes it reinforces a mentality that rewards failure and lack of effort.
+1461,TRUE,This post criticizes California schools for banning American flag shirts on Cinco de Mayo. The author believes it is a violation of the First Amendment and highlights the hypocrisy of allowing Mexican shirts while banning American ones.
+row,delta,explanation
+12,TRUE,"Positive sentiment, 2nd person pronoun, positive words"
+536,TRUE,"Positive sentiment, 2nd person pronoun, positive words"
+1257,TRUE,"Positive sentiment, 2nd person pronoun, positive words"
+73,TRUE,"Positive sentiment, 2nd person pronoun, positive words"
+368,TRUE,"Positive sentiment, 2nd person pronoun, positive words"
+row,delta,explanation
+1112,TRUE,The use of first person pronouns and personal experiences indicate a personal bias against MRAs.
+767,FALSE,"The use of words like ""basic  relatively  and simple"" suggest a subjective view of beauty standards."
+305,TRUE,The use of second person pronouns and hedges suggest a subjective opinion on anonymity on the internet.
+1053,FALSE,"The use of phrases like ""I think"" and ""I believe"" suggest a personal opinion on the selfishness of having children."
+1167,TRUE,The use of negative words and question marks suggest a negative view of wit on Reddit.
+row,delta,explanation
+1248,TRUE,"The opinion uses words such as \'best\', \'excellence\', and \'win\' to argue against draws in professional sports."
+1126,TRUE,The opinion expresses a strong personal disagreement with the idea of reintroducing national service in the UK.
+1206,TRUE,The opinion argues that warning labels stating the obvious should be removed as they are unnecessary and a result of fear of litigation.
+163,FALSE,"The opinion argues that parental rights and responsibilities should be able to be waived pre-birth, citing bodily autonomy and equal rights as reasons."
+47,TRUE,"The opinion argues that people in America tend to look for reasons to be offended, particularly focusing on race and gender issues."
+row,delta,explanation
+919,TRUE,mentions \'Supreme Court ruling\' and discusses \'legalization of Polygamy\'
+98,TRUE,mentions \'private schooling and homeschooling\' and the argument against them
+1032,TRUE,talks about \'concept of free will\' and the argument that humans do not have it
+382,TRUE,talks about \'fighting Islamism\' and suggests supporting the academic study of Islam
+573,TRUE,discusses the idea that \'hate in others reflects traits in ourselves\'
+row,delta,explanation
+632,FALSE,"The post argues that banning hate subs on Reddit does not violate the principle of free speech because it is about preventing organization, not silencing speech. The post also dismisses slippery slope and bias arguments."
+280,TRUE,"The post argues that breastfeeding in public is tantamount to indecent exposure because it can make people uncomfortable, especially in situations where parents and children are present."
+1469,FALSE,"The post argues that there is not enough evidence of the safety and efficacy of vaccines, especially in the face of controversy and conspiracy. The OP questions the motivations of the vaccine industry and believes more evidence is needed to support their use."
+311,TRUE,"The post argues that much modern and contemporary art, such as non-figurative, \'ready-made\', and conceptual art, has profound and deeply expressive merit. The OP defends these forms of art against common objections such as lack of technical skill, incomprehensibility, and lack of traditional beauty."
+row,delta,explanation
+1000,FALSE,"The text expresses negative emotions towards certain individuals on the internet, using negative words like ""garbage"" and ""pieces of garbage"". It also uses strong language to express a desire for exclusion of these individuals."
+1304,TRUE,The text discusses the potential devaluation of a college degree if college education were to be made free. It presents an argument against the idea and raises the question of whether admission requirements would need to be raised if college was free.
+825,FALSE,The text argues that men are a detriment to societal cohesion based on statistics about crime rates and aggression. It questions the reasons behind male criminality and its effect on society.
+1006,FALSE,The text expresses a belief that devoutly religious individuals are morally higher than the average Westerner. It argues for holding these individuals in high esteem and emulating their moral examples.
+1124,TRUE,The text asserts that metaphors are the worst type of evidence in an argument and requests counterexamples. It presents a specific example of a metaphor used in an argument and finds it to be a bad use of metaphor.
+row,delta,explanation
+215,FALSE,The text expresses the belief that transgender individuals are still their original gender despite transitioning.
+135,TRUE,The text expresses the belief that the black community perpetuates stereotypes and self-segregates.
+705,TRUE,The text expresses the belief that posting armed guards at schools is a legitimate proposal to reduce school violence.
+520,FALSE,The text expresses the belief that politicians specifically presidential candidates deserve to be taken out of context.
+1252,TRUE,"The text expresses the belief that the slogan ""Buckle up it\'s the law"" is an appeal to authority and not an effective slogan to promote seat belt usage."
+row,delta,explanation
+298,FALSE,The text does not contain any indication of a change in view. It presents a strong argument for the execution of James Holmes.
+1400,TRUE,"The text acknowledges the opposing view that hot dogs are considered sandwiches by some, but the author maintains their belief that hot dogs are not sandwiches."
+1281,FALSE,"The text expresses a belief that payday loans are a good idea for people in need of quick money, but there is no indication of a change in view."
+1066,TRUE,"The text expresses a belief that the state should provide a painless method of suicide to those who want it, but also acknowledges that their view changed after considering the potential dangers and implications."
+359,FALSE,"The text argues that framing abortion as a woman\'s rights issue is confusing and counterproductive, but there is no indication of a change in view."
+row,delta,explanation
+537,TRUE,This post argues that denying jobs to individuals with mental illness is discriminatory and harmful.
+589,FALSE,"The post argues that viewing child pornography without sharing it does not cause harm because the act itself does not contribute to the distribution or creation of the images.
+553,True,The post argues that white people portraying other races without caricatures or stereotypes is not considered blackface because it does not perpetuate harmful and racist stereotypes."""
+195,TRUE,"The post argues that discussions about race and racial preference programs can exacerbate existing racial tensions and create divisiveness among people, and suggests that the attitude of ""not seeing color"" should be encouraged instead."
+1344,TRUE,"This post suggests that both homosexuality and heterosexuality are choices made by the subconscious mind, influenced by upbringing and experiences, and argues against the idea that sexual orientation is solely determined by genetics or biology."
+row,delta,explanation
+386,TRUE,"The text uses the word \'silly\', a negative word that could indicate bias."
+1495,TRUE,"The text mentions that the writers of TNG have complained about restrictions on conflict and drama, indicating a negative opinion."
+1130,TRUE,"The text uses strong language like \'willfully ignorant\' and \'entitlement\', indicating a negative opinion."
+1454,TRUE,"The text uses negative language like \'propaganda\' and \'forced\', indicating a negative opinion."
+529,TRUE,"The text uses language like \'politically correct notion\', \'war on women\', and \'male privilege\', indicating a negative opinion towards those concepts."
+row,delta,explanation
+399,TRUE,Includes assumptions and presents argument with logical reasoning
+341,TRUE,Discusses legal definitions and presents argument with examples
+1253,FALSE,No valid argument provided only personal anecdotes
+1228,FALSE,No valid argument provided poses a viewpoint without supporting evidence or reasoning
+row,delta,explanation
+812,TRUE,"The text talks about the benefits of a carbon tax and a wealth tax, supporting it with logical arguments and evidence such as the conservation of non-renewable resources and discouragement of pollution. The use of phrases like \'preserve them for our children\' and \'economically rational\' shows a positive valence and overall positive tone in the text."
+58,TRUE,"The text discusses the contradiction between the aims of the transsexual community and certain feminist views, specifically regarding the unification of genders and the elimination of gender roles. It uses logical reasoning and examples to support its argument. The use of phrases like \'pseudo-Orwellian future\' and \'counter-constructive normality\' shows a negative valence and overall negative tone in the text."
+400,FALSE,The text discusses the idea of \'\'enthusiastic\'\' consent in the context of sex and questions whether it is necessary or reasonable. It presents a scenario and poses a question for debate. The use of phrases like \'weird situations\' and \'we wouldn\'t trust the corporate-owned media\' shows a neutral to slightly negative valence in the text.
+898,TRUE,The text argues that there is no \'\'wrong time\'\' to break up with someone and explains the reasoning behind this view. It highlights the importance of honesty and fairness in relationships. The use of phrases like \'invariably be some reason\' and \'unfair to both individuals involved\' shows a neutral tone in the text.
+239,TRUE,"The text presents an argument that sports stadiums are a net negative for local communities and municipalities, hindering their ability to focus on other essential areas like public works, transportation, and education. It supports this argument with sources and logical reasoning. The use of phrases like \'bad deal after bad deal\' and \'this concerns me\' shows a negative valence in the text."
+row,delta,explanation
+1116,FALSE,Contains controversial and offensive statement about sexual abuse and homosexuality.
+442,TRUE,"Argues that if you don\'t vote, you shouldn\'t complain about the results."
+890,TRUE,Argues that opposing same-sex marriage based on religious reasons is hypocritical.
+1104,TRUE,"Claims that being a kid in the 1980s was superior to being a kid now due to various factors like movies, TV, music, and social interactions."
+1086,TRUE,Argues that killing baby cows for food is no more immoral than killing adult cows for food.
+row,delta,explanation
+961,TRUE,The belief in a God-like entity causing the Big Bang is based on personal belief and lack of scientific evidence.
+1506,TRUE,The argument against the downvote system is based on the belief that it silences diverse opinions and goes against the concept of Reddit.
+27,FALSE,The argument that automation is not something to fear is based on the belief that new job opportunities will arise as technology advances.
+1342,FALSE,The support for the Nazi \'Action T4\' program is based on the belief that individuals with severe disabilities absorb too many resources and euthanasia would be economically beneficial.
+1192,FALSE,The belief that America has a responsibility to get involved in foreign conflicts is based on the belief that America is in a position of power and should use that power for the greater good.
+row,delta,explanation
+1181,TRUE,"This post discusses the issue of companies waiving legal rights in contracts, arguing that it is unfair and should not be allowed. The argument is supported by the use of examples and the mention of Unfair Terms. further supporting the argument.
+
+"
+1487,FALSE,The text discusses donating to Ivy League universities and criticizes it as a waste of money
+1503,FALSE,The text argues that watching the TV show Game of Thrones is uninteresting and compares it to watching paint dry. The author states that the show has a predictable outcome and limited character development. They mention a recent poll and personal observations to support their view. The text ends by requesting to change their view.
+1351,TRUE,"The text questions the social norm of saying \'bless you\' after someone sneezes. The author argues that the historical reasons behind the practice are no longer relevant, and that it is unnecessary and silly. The author shares their frustration with being ridiculed for not adhering to this social norm."
+348,TRUE,"The text expresses the opinion that the album \'Dark Side of the Moon\' by Pink Floyd is not enjoyable. The author, a musician, provides their perspective and challenges the album\'s popularity. They mention sound effects and mixing as reasons for their dislike. The author requests a change of view to understand what they might be missing."
+1215,TRUE,"The text argues for standardized licenses for software terms and conditions. The author suggests that many people do not read the terms and conditions, and that standardized licenses, similar to creative commons, would benefit consumers and businesses. The author proposes a limit of 50 words for licenses for inexpensive products."
+row,delta,explanation
+0,TRUE,The text discusses a controversial topic and includes a personal perspective.
+1,TRUE,The text compares laws requiring women to cover their breasts to laws requiring women to cover their hair and faces in Islamic countries.
+2,FALSE,The text expresses an opinion about the real reason for the Civil War.
+3,FALSE,The text discusses the portrayal of women on US currency and argues that it is not empowering.
+4,FALSE,The text argues that evolution should be removed from schools due to its negative associations with school shootings.
+5,TRUE,The text discusses the portrayal of spies in recent spy movies and criticizes their unrealistic portrayal.
+row,delta,explanation
+828,FALSE,The language used shows a negative sentiment towards religion and the argument is supported by specific examples of negative impact.
+1220,FALSE,The language used expresses a belief that some cultures are morally superior based on their ability to promote well-being. The argument is supported by examples and acknowledges potential bias.
+755,FALSE,The language used expresses a belief that free speech applies to private entities and argues against the distinction between private agents and the state in terms of freedom of speech. The argument is supported by examples and reasoning.
+148,FALSE,The language used expresses a belief that genres are beneficial and argues for the importance of being specific with genres in order to find similar music. The argument is supported by examples and comparisons to other forms of media.
+336,FALSE,"The language used argues against the idea that free speech doesn\'t apply to private entities and discusses the power of the public, the importance of unimpeded free speech, and the impact of extreme reactions on free speech. The argument is supported by examples and reasoning."
+row,delta,explanation
+432,TRUE,"The user\'s view was partially changed by another user who argued that a combination option of \'New Friends\' could serve as a way for someone to indicate they are open to friendship while still being on a dating site. However, the user still believes that profiles exclusively stating \'For Friends\' or profiles that primarily focus on finding friends are disingenuous and should not be on dating sites."
+390,TRUE,"The user\'s view was changed by another user who argued that someone having financial issues, such as having credit card debt or exaggerating their net worth, can impact their ability to make sound financial decisions and can raise concerns about their ability to manage an economy as a president."
+702,TRUE,The user\'s view was changed by another user who sympathized with his feelings of loneliness but encouraged him to try and change his negative mindset. The user felt more understood and less alone after hearing the perspectives of others.
+78,TRUE,"The user\'s view was changed by another user who argued that addressing the cause of illegal immigration, such as denying birthright citizenship to children born to parents who cannot prove their legal status, could discourage further illegal immigration. The user now sees the benefits of addressing the root cause rather than just building a wall."
+700,TRUE,"The user\'s view was changed by another user who provided counterarguments to the appeal of Batman, such as suggesting that investing in social programs and industry would be more effective in solving Gotham\'s problems. The user now sees the flaws in Batman\'s method of crime-fighting and questions the appeal of the character."
+row,delta,explanation
+612,TRUE,"Positive words and use of ""change my view"" indicate a desire for discussion"
+888,TRUE,Positive words indicate a desire for discussion
+35,TRUE,"Positive words and use of ""change my view"" indicate a desire for discussion"
+1318,TRUE,"Positive words and use of ""change my view"" indicate a desire for discussion"
+649,FALSE,Negative words indicate a strong opinion and a desire to persuade
+row,delta,explanation
+635,TRUE,"The text contains words like \'incoherent\' and \'rational\', indicating a logical argument."
+1489,FALSE,"The text contains phrases like \'I don\'t want to be known as \'the gay guy\'\' and \'not attractive\', indicating personal opinion."
+323,TRUE,"The text contains phrases like \'people trying to cut ahead of me going 90+ miles are reckless and putting me and everyone else driving in danger\', indicating a personal perspective and concern for safety."
+1065,TRUE,The text presents reasons such as \'No health risks!\' and \'Great Flavor!\' to support the belief that seltzer is superior.
+6,TRUE,The text presents an argument based on the practical reasons for voting in national elections.
+row,delta,explanation
+874,TRUE,The use of negative words and hedges suggests a strong opinion against drag queens.
+808,FALSE,"Although the text contains positive words, it does not provide enough evidence to support a specific delta value."
+1084,TRUE,The use of negative words and the mention of a specific image suggest a negative view of creativity in \'the West.\'
+1102,FALSE,The text mentions personal preferences and does not provide evidence to support a specific delta value.
+534,TRUE,The mention of assistance and the use of hedges suggest a belief that the government should assist people in moving out of drought-stricken areas in the US.
+row,delta,explanation
+303,TRUE,The text includes links to reputable sources that support the view.
+1470,FALSE,The text discusses personal opinion and does not provide evidence or sources.
+216,FALSE,The text discusses personal opinion and does not provide evidence or sources.
+1237,FALSE,The text discusses personal opinion and does not provide evidence or sources.
+426,FALSE,The text discusses personal opinion and does not provide evidence or sources.
+row,delta,explanation
+395,FALSE,"The text talks about the author\'s opinion on the sniper class in TF2, discussing its lack of counter and how it adds no value to the game."
+1440,TRUE,"The author believes that if a killer asteroid were headed towards Earth, humans would be able to stop it due to early detection, the use of nuclear weapons to deflect it, and the dedication of resources to find a solution."
+350,FALSE,"The author is feeling disillusioned and does not believe they should pursue meaningful relationships, have children, or try in life due to personal circumstances and a negative outlook on the world."
+1415,FALSE,"The author believes that consistently consuming animal products is morally wrong and selfish, even when vegan options are readily available."
+1515,TRUE,"The author opposes inheritance tax, arguing that it is unfair for the government to take a portion of someone\'s belongings or money when they pass them on to a loved one."
+row,delta,explanation
+202,FALSE,This post suggests that Dr. Seuss should be required reading in high school because it contains lessons and morals that are lacking in other classic literature. It argues that the focus should be on literature that prepares students for the real world and teaches important life lessons.
+1437,FALSE,"This post argues that if someone has been sentenced to death, they do not deserve a painless execution because they have committed heinous crimes. It asserts that the concerns of the person being executed are not important and suggests that using more painful forms of execution would benefit society."
+383,FALSE,"This post claims that the struggles of black and Hispanic Americans in the United States are not valid because of the success of poor Asian immigrants. It argues that the cultural differences and emphasis on hard work, sacrifice, and education in Asian immigrant communities are the reasons for their success."
+574,TRUE,"This post argues that if an undesirable outcome is a logical consequence of an action or ideology, people will try to figure out how to achieve the action or ideology without causing the undesirable outcome. It suggests that people are capable of recognizing and avoiding negative consequences and that being hypocritical in order to prevent negative outcomes is acceptable."
+310,FALSE,"This post contends that liberalism is undergoing a schism and splitting into two factions. It describes the first faction as focused on political correctness, social justice, and equality of outcome, while the second faction opposes political correctness and emphasizes equality of opportunity. It suggests that these factions have different views on multiculturalism, evolutionary psychology, and gun control."
+row,delta,explanation
+1014,FALSE,Text does not contain any indicators of change in view.
+1420,FALSE,Text does not contain any indicators of change in view.
+404,FALSE,Text does not contain any indicators of change in view.
+547,FALSE,Text does not contain any indicators of change in view.
+8,FALSE,Text does not contain any indicators of change in view.
+1014,FALSE,Text does not contain any indicators of change in view.
+1420,FALSE,Text does not contain any indicators of change in view.
+404,FALSE,Text does not contain any indicators of change in view.
+547,FALSE,Text does not contain any indicators of change in view.
+8,FALSE,Text does not contain any indicators of change in view.
+row,delta,explanation
+596,TRUE,The public reaction is being criticized for being unjust and biased against the Ashley Madison users.
+241,TRUE,The friend argues that white people cannot understand and criticize the actions of minorities due to lack of perspective.
+490,TRUE,The USA is criticized for being the least trustworthy nation to possess atomic weapons based on historical events and current actions.
+1238,FALSE,"The post argues that nonwhite people should be grateful for the accomplishments of white people, but fails to provide a valid explanation."
+1245,FALSE,"The post argues that preventing sexually promiscuous behavior in children is a violation of their bodily integrity, but fails to provide a valid explanation."
+row,delta,explanation
+1199,FALSE,"The opinion is supported by the use of examples and reasoning, mentioning advantages and disadvantages of both types of forums."
+205,TRUE,"The opinion is supported by reasoning and personal experience, mentioning the cost and population control benefits of exiling criminals."
+1024,FALSE,The opinion is supported by personal experience and the perception of Republican voters based on limited understanding of their platform.
+1368,TRUE,The opinion is supported by reasoning and the belief that knowingly passing down a deadly or devastating disease/condition is morally wrong.
+863,FALSE,The opinion is supported by reasoning and the belief that spending money on oneself when others are in need is immoral.
+row,delta,explanation
+937,TRUE,"Strong negative sentiment, use of words like ""corrupt"" and ""harmful"", mention of concerns about censorship and free speech."
+275,TRUE,"Strong positive sentiment, use of words like ""fantastic"" and ""saint"", mention of support for equality and basic needs."
+1133,TRUE,"Strong positive sentiment, praise for Sanders\' policies and beliefs, mention of him being a down to earth and supporting equality."
+1156,FALSE,"Neutral sentiment, expressing curiosity and desire to see both sides of the argument."
+496,FALSE,"Neutral sentiment, expressing personal preference and dislike for Pepsi, but not making any strong argument against it."
+row,delta,explanation
+1081,TRUE,"Uses negative words, clear stance against refugees"
+531,FALSE,"Uses positive words, unclear stance on money hoarding"
+685,FALSE,"Uses negative words, subjective argument against makeup"
+799,TRUE,"Uses positive words, clear stance on superiority of PC gaming"
+62,TRUE,"Uses negative words, clear stance against the use of the N-word"
+row,delta,explanation
+528,TRUE,"Uses indefinite articles, positive words, and 1st person pronouns"
+976,TRUE,Has a reference to external source
+315,TRUE,"Uses definite articles, positive words, and 1st person pronouns"
+1041,FALSE,Does not have any significant features
+693,TRUE,"Uses indefinite articles, positive words, and 1st person pronouns"
+row,delta,explanation
+1480,TRUE,"The text uses definite articles, indefinite articles, positive words, 2nd person pronouns, links, hedges, 1st person pronouns, 1st person plural pronoun, .com links, examples, definite articles, question marks, positive words, quotations, and sentence type-token ratio to support the claim that Andrew Jackson should not be on the twenty."
+1516,TRUE,"The text uses definite articles, indefinite articles, positive words, 2nd person pronouns, links, hedges, 1st person pronouns, 1st person plural pronoun, .com links, examples, definite articles, question marks, positive words, quotations, and sentence type-token ratio to support the claim that there will never be another military draft in America."
+546,TRUE,"The text uses definite articles, indefinite articles, positive words, 2nd person pronouns, links, hedges, 1st person pronouns, 1st person plural pronoun, .com links, examples, definite articles, question marks, positive words, quotations, and sentence type-token ratio to support the claim that iPads are overpriced compared to other tablets."
+1434,TRUE,"The text uses definite articles, indefinite articles, positive words, 2nd person pronouns, links, hedges, 1st person pronouns, 1st person plural pronoun, .com links, examples, definite articles, question marks, positive words, quotations, and sentence type-token ratio to support the claim that parents should not read their child\'s private journals/diaries."
+1195,TRUE,"The text uses definite articles, indefinite articles, positive words, 2nd person pronouns, links, hedges, 1st person pronouns, 1st person plural pronoun, .com links, examples, definite articles, question marks, positive words, quotations, and sentence type-token ratio to support the claim that burritos are better than sandwiches."
+row,delta,explanation
+1389,TRUE,"The use of negative words such as ""weak  anemic  and doesn\'t penetrate well  suggests a negative view towards the 9mm and supports the argument that .45 and .40 are superior."
+659,FALSE,"The use of phrases like I believe"" and ""personal observations"" indicates that this is an opinion"
+1080,TRUE,"The use of phrases like ""protecting and even strengthening our economy"" and ""increase their quality of life"" suggests that the argument revolves around economic interests. There is also a mention of ""peace keeping"" and ""security purposed"" military action further supporting the argument."
+768,FALSE,"The use of phrases like ""I believe"" and ""my opinion"" indicates that this is a subjective view rather than a statement of fact. There are no strong stylistic features indicating a clear argument."
+1225,FALSE,"The use of phrases like ""I believe"" and ""in my opinion"" indicates that this is a subjective view rather than a statement of fact. There are also no strong stylistic features indicating a clear argument."
+row,delta,explanation
+0,TRUE,This text expresses a belief about the end of human evolution based on lack of environmental stress and social systems hindering natural selection.
+1,FALSE,This text expresses a personal opinion about not being charged extra for double sour cream when guacamole is removed from an order.
+2,TRUE,This text expresses the view that politicians involved in sexual scandals should be judged based on their policies and work ethic rather than their personal behavior.
+3,TRUE,This text argues that heterosexuality is not the \'default\' or \'normal\' sexual orientation and questions the assumption that most humans are inherently attracted only to the opposite sex.
+4,FALSE,"This text argues against the existence of paid pro-Kremlin propagandists on Reddit, suggesting that accusations of being pro-Russian are based on cultural bias rather than evidence."
+row,delta,explanation
+188,TRUE,"This post expresses a negative view towards signing people up to vote, claiming they will be too lazy to inform themselves. It asks for well-constructed arguments against this view."
+189,TRUE,"The post argues that self-harm is not inherently bad due to the dangerous nature of the act, comparing it to other activities that carry risks. It seeks a logical argument against this viewpoint."
+1087,FALSE,"The post suggests that engaging in sexual activity at an early age would accelerate a boy\'s maturity, questioning why it would be considered bad. It asks for an explanation of why this view is incorrect."
+587,TRUE,"The post asserts that romantic love is purely a combination of platonic relationship and physical attraction, and challenges others to provide a reason why self-harm is inherently bad."
+1249,FALSE,"The post defends the practice of male circumcision, citing personal satisfaction, cultural norm, and potential health benefits. It requests scientific studies or evidence to change its view."
