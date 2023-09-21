@@ -22,7 +22,7 @@ I tried two different strategies to try to predict the malleability of OP's:
 
 1. **Unprimed Approach** Rely on the encoded knowledge GPT 3.5 might have about open-mindedness and produce an unrimed prompt
 
-2. **Feature Primed Approach** Tan et al. found a battery of statistically significant predictive text features that indicated an OP's malleability. I set out to prime GPT 3.5 with those features to see if I could beat the unprimed approach. Features are found below
+2. **Feature Primed Approach** Tan et al. found a battery of statistically significant predictive text features that indicated an OP's malleability. I set out to prime GPT 3.5 with those features to see if I could beat the unprimed approach. Features are found below.
 
 ```
 FEATURES = ['#words', '#definite articles', '#indefinite articles', '#positive words', '#2nd person pronoun', '#links',
@@ -38,7 +38,7 @@ FEATURES = ['#words', '#definite articles', '#indefinite articles', '#positive w
 
 #### Unprimed Approach
 
-I prompted GPT 3.5 with the following prompt
+I prompted GPT 3.5 with the following prompt:
 
 >I have a set of predictions here \n\n{examples}\n\n I want you to explain what characteristics make an OP malleable, now tell me, out of the following opinions that I have given you, how many of these op's are malleable based on your predictions. append to your explanation the number correct then list the row numbers with the variable { examples } I passed in `heldout_op_data` from `'cmv/op_task/heldout_op_data.jsonlist.bz2'` for GPT 3.5 to assess
 
@@ -48,17 +48,18 @@ I prompted GPT 3.5 with the following prompt
 
 #### Feature Primed Approach
 
-I prompted GPT 3.5 with the following prompt
+I prompted GPT 3.5 with the following prompt:
 
 >Here is a list of opinions: \n\n {examples} classify each row as delta:True or delta:False, provide an explanation of 100 characters supported by features of the text such as 
 >{''.join(FEATURES)} ```{to_predict[['title', 'delta_label', 'selftext']]}``` produce your
 >results in valid csv format with header '\'row\', \'delta\', \'explanation\'' for every row >explanation should talk about the stylistic features, make sure that you include the row index in >the row column of the csv. make sure you produce a valid csv"
 
-the variable `{ examples }` in this case are 20 rows from the training set fed into the prompt in text format.
-(sadly GPT 3.5 did not produce a consistent csv, although it was simple enough to engineer it to one in PyCharm)
+the variable `{ examples }` in this case represents 20 rows randomly sampled from the training set and fed into the prompt in text format.
 
-**Sample Explanation**
+**Sample Explanation Output**
 >"This post argues that tougher gun laws would not have prevented yesterday's tragedy where Bryce Williams killed Alison Parker and Adam Ward. The author believes that if guns were more difficult to access, Bryce Williams would have found another means to carry out the attack. The explanation highlights the use of repetition to emphasize the author's point and the mention of specific names and details related to the tragedy."
+
+Note that the feature-primed approach draws out that the OP uses repetition and concrete names and details.
 
 ### Analysis
 
@@ -78,14 +79,15 @@ I then asked the LLM to take the explanations of each row and summarize what cha
 >The most common factors that made this group of OPs less malleable are:\n\n1. Strong opinions without mentioning openness to alternative viewpoints.\n2. Firm beliefs without expressing a desire to hear counter-arguments or be persuaded otherwise.\n3. Lack of mention of being open to changing their views.\n4. Clear stance on an issue, leaving little room for malleability.\n5. Stating a belief without indicating a willingness to question or self-reflect.\n\nThese factors suggest that a lack of openness to considering new information, perspectives, or evidence, as well as a strong emotional attachment to their opinions, contribute to the OPs being less malleable
 
 
-What is interesting here is that GPT 3.5 mainly described the disposition of the OP rather than textual or argumentative features. See the example of a single opinion below.
+What is interesting here is that GPT 3.5 mainly described the disposition and/or emotional state of the OP rather than textual or argumentative features. See the example below.
+
 >* Malleable: Yes. This opinion has the potential to be changed if the OP is open to considering different perspectives on Snowden's support from the left.
 
 I suspect this might be because of the model's fine-tuning to be conversational.
 
 **Feature Primed Model Fit**
 
-In the feature-primed model, we saw modestly better performance. per the AUROC analysis. I would like to take further samples of a similar size and see if we are statistically significant in our finding that the feature-primed approach performed better than the unprimed approach. I did find a seemingly high false positive rate of `0.9610` for the unprimed approach versus `0.5428` for the feature-primed approach.
+In the feature-primed model, we saw modestly better performance. per the AUROC analysis.
 ```
 In [391]: auc_score_feature_primed = roc_auc_score(validation_numeric["delta_labe
      ...: l_numeric"], validation_numeric["feature_primed_numeric"])
@@ -94,7 +96,11 @@ In [392]: auc_score_feature_primed
 Out[392]: 0.5280129764801298
 ```
 
-I then asked the LLM to take the explanations of each row and summarize what characteristics make the OP malleable
+I would like to take further samples of a similar size and see if we are statistically significant in our finding that the feature-primed approach performed better than the unprimed approach. 
+
+I did find a seemingly high false positive rate of `0.9610` for the unprimed approach versus `0.5428` for the feature-primed approach. All in all model performance here was not as performant as that found in Tan et al.
+
+I then asked the LLM to take the explanations of each row and summarize what characteristics make the OP malleable.
 
 > This collection of posts all demonstrates different viewpoints and perspectives on various topics. However, they all have commonalities in how they express 
 > personal opinions and beliefs without providing evidence or counterarguments. They also tend to use emotional language and may have dismissive tones towards 
@@ -105,32 +111,28 @@ I then asked the LLM to take the explanations of each row and summarize what cha
 > supporting evidence or sources, and the inclusion of specific words or phrases that indicate a positive or negative sentiment. Additionally, some explanations
 >  mention the presence of logical arguments or reasoning to support the views expressed in the posts.
 
-When primed with features the LLM considers argumentative structures and rhetorical devices used in the text. Language like "They also tend to use emotional language and may have dismissive tones towards opposing arguments" is indicative of this bias
+When primed with features, the LLM considers argumentative structures and rhetorical devices used in the text. I found evidence of these devices when considering language like: "They also tend to use emotional language and may have dismissive tones towards opposing arguments"
 
 >"row,delta,explanation\n597,False,\"The text does not provide any evidence for the claim that being gay is solely due to upbringing and socialization rather than biological factors. It seems to be based on personal speculation and anecdotal experience. There are no references or supporting facts provided.\""
 
-In the above analysis, we see that the LLM was able to the assess that the OP was speculating and relying on anecdotes rather than facts. This is quite interesting considering that `anecdotes` or `# of facts` were not in the original list of features that I provided. By priming the LLM it seems as though I forced the LLM to consider the rhetorical structure of the text rather than the OP's disposition.
+In the above analysis, we see that the LLM was able to assess that the OP was speculating and relying on anecdotes rather than facts. This is quite interesting considering that `anecdotes` or `# of facts` were not in the original list of features that I provided. By priming the LLM it seems as though I forced the LLM to consider the rhetorical structure of the text rather than the OP's disposition.
 
 ### Further Investigation
 
-We received better model performance and a more cogent explanation when priming the LLM with features. I would like to test several prompting strategies in which I prime the LLM with different frameworks to consider when performing its analysis of the text. LLMs have been found to be good at analogical reasoning. I would try to see if incorporating a strategy akin to [ideal point estimation]([url](https://blogs.iq.harvard.edu/ideal_points_1#:~:text=Ideal%20point%20models%20attempt%20to,that%20they%20cast%20on%20legislation.)) might yield better results. Generally the thought would be to prime the large language model with characteristics of what a malleable OP's text would look like and what an unmalleable OP's text would look like. and see if that analogy could help the LLM better predict.
+We received better model performance and a more cogent explanation when priming the LLM with features. I would like to test several prompting strategies in which I prime the LLM with different frameworks to consider when performing its analysis of the text. LLMs have been found to be good at analogical reasoning. I would try to see if incorporating a strategy akin to [ideal point estimation]([url](https://blogs.iq.harvard.edu/ideal_points_1#:~:text=Ideal%20point%20models%20attempt%20to,that%20they%20cast%20on%20legislation.)) might yield better results. Generally, the thought would be to prime the large language model with characteristics of what a malleable OP's text would look like and what an unmalleable OP's text would look like. and see if that analogy could help the LLM better predict.
 
 ## Pair Analysis of Effective Argument Features
 
 ### Task
 
-I set out to use LLMs to predict which of two similar counterarguments will succeed in changing the same view.
-Tan et al. found that style features and interplay features have predictive power. 
-
-- The feature with the most predictive power of successful persuasion is the dissimilarity with the original post in word usage
-
+Analyze pairs of arguments attempting to change an OP's view and then assess the difference between the argument that convinced the OP versus the argument that did not also via GPT 3.5 API's.
 
 ### Unprimed Approach
 I prompted GPT 3.5 with the following:
 
  ```f"Please summarize and list the commonalities in this list of explanations {pair}"```
 
- the variable  `{ pair }` in this case in 500 rows, batched in a series of 5 rows from the held-out set, fed into the prompt in text format.
+the variable  `{ pair }` in this case in 500 rows, batched in a series of 5 rows from the held-out set, fed into the prompt in text format.
 
 **Unprimed Prompt output from GPT 3.5**
 >"To summarize the common ways to successfully change someone's mind:\n\n1. Present logical and rational arguments.\n2. Appeal to emotions.\n3. Provide alternative perspectives.\n4. Engage in respectful dialogue.\n5. Use storytelling and personal anecdotes.\n6. Focus on common ground.\n7. Provide evidence and examples.\n8. Be patient and persistent."
@@ -160,11 +162,12 @@ I concatenated the outputs and asked GPT 3.5 to give me a list of the top featur
    - Use of question marks
    - Inclusion of examples
 
-
 ### Analysis
 
-Contrasting the pairwise analysis from the unprimed and primed approach we get results that are quite differential. The only features conceptually similar are evidence and examples in the unprimed output and evidence of links in the feature-primed output.  In the unprimed output, GPT 3.5 focuses on how to appeal emotionally to an OP, "appeal to emotions", "respectful dialogue", and "common ground" are all strategies to maximize the agreeableness of OP and positive poster. In the feature-primed output, the LLM appears to suggest that appearing authoritative is the key to changing views. "Higher number of words, use of question marks (sign of rhetorical questions), use of 2nd person pronoun "you" illustrate this.
+Contrasting the pair analysis from the unprimed and feature-primed approach, we get results that are quite different. The only features conceptually similar are evidence and examples in the unprimed output and evidence of links in the feature-primed output.  In the unprimed output, GPT 3.5 focuses on how to appeal emotionally to an OP, "appeal to emotions", "respectful dialogue", and "common ground" are all strategies to maximize the agreeableness of OP and positive poster. In the feature-primed output, the LLM appears to suggest that appearing authoritative is the key to changing views. "Higher number of words, use of question marks (a sign of rhetorical questions), use of 2nd person pronoun "you" illustrate this.
+
+Tan et al. found that the number of words and interplay with the OP were highly predictive features of changing an OP's view. This is interesting to consider when assessing these two approaches. I would argue that the feature-primed approach also surfaces the number of words as a key feature in changing an OP's view while the unprimed approach, in emphasizing the agreeableness of the positive argument, alludes to the importance of interaction with the OP. On this level, I would say both approaches support the findings of Tan et al.
 
 ### Further Investigation
 
-In further investigration I would have liked to get a distributional sense of how often each top strategy was used and also a temporal sense of when strategies were deployed. Tan et al.'s cutting up responses into quantiles was effective in this. perhaps taking a handful of positive-negative pairs and feeding them into the LLM quadrant by quadrant could give us a temporal sense of when the strategies were deployed.
+In further investigation I would have liked to get a distributional sense of how often each top strategy was used and also a temporal sense of when strategies were deployed. Tan et al.'s cutting up responses into quantiles was effective in this. perhaps taking a handful of positive-negative pairs and feeding them into the LLM quadrant by quadrant could give us a temporal sense of when the strategies were deployed.
