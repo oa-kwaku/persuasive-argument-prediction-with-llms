@@ -6,15 +6,15 @@ There were two objectives for this exercise:
 
 1. Assess the Malleability of the Original Poster (OP) via GPT 3.5 API's
    
-2. Analyze Pair arguments made to convince an OP and assess the difference between the argument that convinced the OP versus the argument that did not also via GPT 3.5 API's
+2. Analyze pairs of arguments attempting to change an OP's view and then assess the difference between the argument that convinced the OP versus the argument that did not also via GPT 3.5 API's.
 
-For more context, please refer to [https://chenhaot.com/papers/changemyview.html](https://chenhaot.com/papers/changemyview.html)
+For more context, please refer to [https://chenhaot.com/papers/changemyview.html](https://chenhaot.com/papers/changemyview.html).
 
 ## 1. OP Analysis of Malleability
 
 ### Task
 
-For this objective, I had a JSON dataset of OP opinions. From this dataset I wanted to see if I could predict which OP's had "malleable" minds with the help of GPT 3.5 and prompting
+For this objective, I had a JSON dataset of OP opinions. I wanted to see if I could predict which OP's had "malleable" minds with the help of GPT 3.5 and prompting
 
 ### Approach
 
@@ -113,39 +113,7 @@ In the above analysis, we see that the LLM was able to the assess that the OP wa
 
 ### Further Investigation
 
-We received better model performance and a more cogent explanation when priming the LLM with features. I would like to test several prompting strategies in which I prime the LLM with different frameworks to consider when performing its analysis of the text. In personal experience, I have found LLMs to perform well with a concrete rubric, so I would try to prompt the LLM to produce a feature matrix -- perhaps even clamping the range of outputs to a binary or likert scale of values. 
-
-I want to go the route of constraining the large language model because its inconsistency of output appears to be the largest source of error. When batching the 500 opinions, I used a batch size of 5. When looking at the output, one can see that in each output the LLM used different "logic" in considering those 5 opinions. 
-
-These outputs are from the same run
->Row 1301
-Row 925
-Row 1402 To determine the malleability of an opinion, we need to analyze the characteristics provided in the dataset. Unfortunately, the dataset you have provided does not include any specific information regarding the malleability of the opinions. The only information available is the title and selftext of each post.
-Without additional information, it is not possible to determine the malleability of each opinion accurately. Therefore, it is not possible to identify the number of correct predictions and list the row numbers.
-
->OP 480:
-Openness to change: The OP states they are looking for reasons why Amazon Echo can be more helpful than harmful. They seem open to changing their view.
-Willingness to engage: The OP actively responds to comments and engages in discussions.
-Respectful attitude: The OP maintains a respectful tone throughout the post.
-OP 924:
-Openness to change: The OP expresses being conflicted on their view and seeks input to help them make a decision.
-Willingness to engage: The OP states their hope for someone to offer personal experiences/beliefs.
-Respectful attitude: The OP maintains an open-minded tone in their post.
-OP 1184:
-Openness to change: The OP is willing to give deltas if specific conditions are met.
-Willingness to engage: The OP provides specific questions and criteria for changing their view.
-Respectful attitude: The OP maintains a respectful tone and acknowledges the possibility of being an "aberration."
-OP 1240:
-Openness to change: The OP does not explicitly express openness to changing their view.
-Willingness to engage: The OP does not actively engage in discussions or respond to comments.
-Respectful attitude: The OP does not exhibit disrespect, but lack of active engagement limits their malleability.
-OP 1500:
-Openness to change: The OP presents their viewpoint and seeks to understand how opposing perspectives fit within the framework of descriptivism.
-Willingness to engage: The OP actively asks for someone to convince them and is seeking explanations.
-Respectful attitude: The OP maintains a respectful tone in their post.
-Based on the analysis, it appears that 4 out of the 5 provided OPs exhibit the characteristics of malleable OPs. The row numbers of the malleable OPs are 480, 924, 1184, and 1500.
-
-With the same prompt GPT 3.5, in the same was unable to successfully predict but was then in a different batch, GPT 3.5 was able to successfully find malleable rows. Thus in further investigation, it is paramount that I cut down on the variability of the output. 
+We received better model performance and a more cogent explanation when priming the LLM with features. I would like to test several prompting strategies in which I prime the LLM with different frameworks to consider when performing its analysis of the text. LLMs have been found to be good at analogical reasoning. I would try to see if incorporating a strategy akin to [ideal point estimation]([url](https://blogs.iq.harvard.edu/ideal_points_1#:~:text=Ideal%20point%20models%20attempt%20to,that%20they%20cast%20on%20legislation.)) might yield better results. Generally the thought would be to prime the large language model with characteristics of what a malleable OP's text would look like and what an unmalleable OP's text would look like. and see if that analogy could help the LLM better predict.
 
 ## Pair Analysis of Effective Argument Features
 
@@ -157,79 +125,46 @@ Tan et al. found that style features and interplay features have predictive powe
 - The feature with the most predictive power of successful persuasion is the dissimilarity with the original post in word usage
 
 
-### Naive Approach
+### Unprimed Approach
+I prompted GPT 3.5 with the following:
 
-"To summarize the common ways to successfully change someone's mind:\n\n1. Present logical and rational arguments.\n2. Appeal to emotions.\n3. Provide alternative perspectives.\n4. Engage in respectful dialogue.\n5. Use storytelling and personal anecdotes.\n6. Focus on common ground.\n7. Provide evidence and examples.\n8. Be patient and persistent."
+ ```f"Please summarize and list the commonalities in this list of explanations {pair}"```
 
-### Approach
+ the variable  `{ pair }` in this case in 500 rows, batched in a series of 5 rows from the held-out set, fed into the prompt in text format.
+
+**Unprimed Prompt output from GPT 3.5**
+>"To summarize the common ways to successfully change someone's mind:\n\n1. Present logical and rational arguments.\n2. Appeal to emotions.\n3. Provide alternative perspectives.\n4. Engage in respectful dialogue.\n5. Use storytelling and personal anecdotes.\n6. Focus on common ground.\n7. Provide evidence and examples.\n8. Be patient and persistent."
+
+### Feature Primed Approach
 
 I prompted GPT 3.5 with the following in order to perform the task
 
-> summarize the difference in the positive and negative arguments by talking about the contrast in the following features {','.join(FEATURES)} only talk about the top 3 features that were significantly present in the positive argument but not the negative and limit the output to 100 words
-
-#### Prompt
 ```
-"Here is an opinion with an argument that convinced an OP and an argument that did not convince the OP. OP will give a ∆ to the winning argument so don't factor that in `{evaluation_data()[num_predicted: num_predicted + BATCH_SIZE]}`"
-
-summarize the difference in the positive and negative arguments by talking about the contrast in the following features {','.join(FEATURES)} only talk about the top 3 features that were significantly present in the positive argument but not the negative and limit the output to 100 words"
+summarize the difference in the positive and negative arguments by talking about the contrast in the following features {','.join(FEATURES)} only talk about the top 3 features that were significantly present in the positive argument but not the negative and limit the output to 100 words
 ```
+
+**Sample Output**
+>"In summary, the positive argument was more convincing and persuasive compared to the negative argument due to several key features:\n\n1. Use of positive words: The positive argument used language that conveyed an optimistic and supportive tone, which likely influenced the reader's perception of the argument.\n\n2. Inclusion of links: The positive argument provided additional evidence and supporting information through the use of links, which enhanced the credibility and persuasiveness of the argument.\n\n3. Use of examples: The positive argument included specific examples to illustrate and strengthen its points, which made the argument more relatable and persuasive.\n\nOverall, the positive argument utilized language, evidence, and examples to create a compelling and persuasive case. In contrast, the negative argument lacked these persuasive elements, making"
+
+In the sample output of one of the batches, one can get a sense of how the LLM is thinking of arguments when primed by features.
+
+I concatenated the outputs and asked GPT 3.5 to give me a list of the top features
+
+>The most common text features mentioned as differentiators between positive and negative arguments are:
+   - Higher number of words
+   - Presence of definite and indefinite articles
+   - Higher number of positive words
+   - Use of 2nd person pronoun "you"
+   - Inclusion of a link
+   - Presence of positive words
+   - Use of question marks
+   - Inclusion of examples
+
 
 ### Analysis
 
-#### Feature
-"In summary, the positive argument was more convincing and persuasive compared to the negative argument due to several key features:\n\n1. Use of positive words: The positive argument used language that conveyed an optimistic and supportive tone, which likely influenced the reader's perception of the argument.\n\n2. Inclusion of links: The positive argument provided additional evidence and supporting information through the use of links, which enhanced the credibility and persuasiveness of the argument.\n\n3. Use of examples: The positive argument included specific examples to illustrate and strengthen its points, which made the argument more relatable and persuasive.\n\nOverall, the positive argument utilized language, evidence, and examples to create a compelling and persuasive case. In contrast, the negative argument lacked these persuasive elements, making"
-
-```
-The most common text features mentioned as differentiators between positive and negative arguments are:
-
-- Higher number of words
-- Presence of definite and indefinite articles
-- Higher number of positive words
-- Use of 2nd person pronoun "you"
-- Inclusion of a link
-- Presence of positive words
-- Use of question marks
-- Inclusion of examples
-```
+Contrasting the pairwise analysis from the unprimed and primed approach we get results that are quite differential. The only features conceptually similar are evidence and examples in the unprimed output and evidence of links in the feature-primed output.  In the unprimed output, GPT 3.5 focuses on how to appeal emotionally to an OP, "appeal to emotions", "respectful dialogue", and "common ground" are all strategies to maximize the agreeableness of OP and positive poster. In the feature-primed output, the LLM appears to suggest that appearing authoritative is the key to changing views. "Higher number of words, use of question marks (sign of rhetorical questions), use of 2nd person pronoun "you" illustrate this.
 
 ### Further Investigation
 
-Get an idea of proportion, what percentage of results employed each of the following strategies?
-
-
-
-```
-Positive sentiment first person pronoun (#views#) links (#people#) positive words (#support#)
-     ...: Positive sentiment negative words (#unconstitutiona#)
-     ...: Negative sentiment indefinite article (#not#) negative words (#bad##hate#)
-     ...: Positive sentiment positive words (#best#)
-     ...: Positive sentiment positive words (#better#) negative words (#leaving#) positive and negative examples (#better# #well paying##stable#)
-     ...: explanation
-     ...: The text includes negative words and hedges, suggesting a change in view.
-     ...: The text includes negative words and hedges, suggesting no change in view.
-     ...: The text includes negative words, suggesting a change in view.
-     ...: The text includes negative words, hedges, and a quotation, suggesting a change in view.
-     ...: The text includes negative words and hedges, suggesting a change in view.
-     ...: The text includes positive words and a URL, suggesting no change in view.
-     ...: The text includes positive words and a URL, suggesting a change in view.
-     ...: The text does not include any keywords, suggesting no change in view.
-     ...: The text does not include any keywords, suggesting no change in view.
-     ...: The text does not include any keywords, suggesting no change in view.
-     ...: explanation
-     ...: This post expresses racist views towards Gypsies, using negative words and stereotypes.
-     ...: This post argues against the idea of equal value for all humans, using subjective measures.
-     ...: This post discusses the idea of restricting immigration based on ethnic history, without expressing explicit racism.
-     ...: This post argues that philosophy is not distinct from the scientific method, using reasoning and examples.
-     ...: This post discusses the ethics of killing Hitler using a time machine, considering potential consequences.
-     ...: explanation
-     ...: Progressive minimum wage system is proposed, similar to progressive tax system.
-     ...: Becoming an online entertainer is seen as a risky career due to uncertainties of success.
-     ...: There are competing opinions on whether transgender people should be allowed to choose restrooms.
-     ...: The word \'bulbous\' is argued to be grosser than the word \'moist\' because it has no positive connotations and requires a more complicated mouth shape to say.
-     ...: explanation
-     ...: The text includes the words \'I believe\' indicating a personal opinion.
-     ...: The text includes negative words like \'annoying\', \'stupid\', and \'assholes\', indicating a negative viewpoint.
-     ...: The text includes negative words like \'inconsiderate\', \'unthinkable\', and \'asshole\', indicating a negative viewpoint.
-     ...: The text includes negative words like \'annoying\', \'wake\', and \'fucking\', indicating a negative viewpoint.
-     ...: The text includes negative words like \'problems\', \'violence\', and \'fighting\', indicating a negative viewpoint.
-```
+In further investigration I would have liked to get a distributional sense of how often each top strategy was used and also a temporal sense of when strategies were deployed. Tan et al.'s cutting up responses into quantiles was effective in this. perhaps taking a handful of positive-negative pairs and feeding them into the LLM quadrant by quadrant could give us a temporal sense of when the strategies were deployed.
